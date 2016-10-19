@@ -1,0 +1,74 @@
+<HTML><HEAD><TITLE>XML element Recommendation</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: Recommendation</h2>Describes the conditions of a VMstore Pool based on the analysis performed by the Recommendation Engine.
+
+ The Recommendation contains some of the following concepts:
+ <table class=info>
+ <tr>
+    <th>Description</th>
+    <th>Property</th>
+ </tr>
+ <tr>
+   <td>current issues in the Recommendation</td>
+   <td>issues</td>
+ </tr>
+ <tr>
+   <td>actions that can be done to alleviate or mitigate the issues</td>
+   <td>actionGroups</td>
+ </tr>
+ <tr>
+   <td>improvements expected if the recommendation is accepted</td>
+   <td>expectedOutcomes</td>
+ </tr>
+ <tr>
+   <td>state of the recommendation including the progress applying the recommendation</td>
+   <td>state</td>
+ </tr>
+ </table>
+
+ Tintri Global Center will generate the Recommendation for a VMstore pool on a regular
+ schedule, currently 6 am and 6 pm local time.
+ The Recommendation is generated even if there are no issues detected.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.loadbalance.recommendation.Recommendation",
+   "<a href='#m_acceptedTime'>acceptedTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_acknowledgedTime'>acknowledgedTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_completionTime'>completionTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_creationTime'>creationTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_executionState'>executionState</a>": 'AVAILABLE' | 'PENDING' | 'RUNNING' | 'RUNNING_ERROR' | 'COMPLETED_OK' | 'COMPLETED_FAILED' | 'CANCELLED_PENDING' | 'COMPLETED_CANCELLED',
+   "<a href='#m_expirationTime'>expirationTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_groupId'>groupId</a>": &ltString&gt,
+   "<a href='#m_id'>id</a>": &ltString&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_state'>state</a>": 'AVAILABLE' | 'AVAILABLE_ACKED' | 'ACCEPTED' | 'CANCELLED' | 'INVALIDATED' | 'EXPIRED' | 'REFRESH' | 'NO_RECOMMENDATION_NEEDED' | 'NO_RECOMMENDATION_AVAILABLE',
+   "<a href='#m_stateReason'>stateReason</a>": 'INVALID_VMS_CHANGED' | 'INVALID_POOL_MEMBER_DELETED' | 'INVALID_VMS_DONT_MIGRATE_NOW' | 'INVALID_SOME_MOUNT_DIRECTORIES_WERE_DELETED' | 'INVALID_TARGET_VMSTORE_TOO_FULL' | 'UNAVAILABLE_UNDER_CONSTRUCTION' | 'UNAVAILABLE_NO_SUITABLE_VMS_TO_MOVE' | 'UNAVAILABLE_POOL_RESOURCES_EXHAUSTED' | 'UNAVAILABLE_NO_VALID_RECOMMENDATIONS' | 'UNAVAILABLE_TOO_MANY_VMS_DONT_MIGRATE_NOW' | 'UNAVAILABLE_INSUFFICIENT_LICENSES',
+   "<a href='#m_vmAffinityNotNowTintriUuids'>vmAffinityNotNowTintriUuids</a>": &ltString&gt,
+   "<a href='#m_vmstorePoolId'>vmstorePoolId</a>": &ltString&gt,
+   "<a href='#m_actionGroups'>actionGroups</a>": [<a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationActionGroup.html'>RecommendationActionGroup</a>],
+   "<a href='#m_expectedOutcomes'>expectedOutcomes</a>": [<a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationOutcome.html'>RecommendationOutcome</a>],
+   "<a href='#m_feedback'>feedback</a>": <a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationFeedback.html'>RecommendationFeedback</a>,
+   "<a href='#m_issues'>issues</a>": [<a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationAnalysis.html'>RecommendationAnalysis</a>],
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_actionGroups'>actionGroups</td><td>xsd:list[<a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationActionGroup.html'>RecommendationActionGroup</a>]</td><td>A list of action groups. The groups must be executed in the order they are returned.
+ However, the actions inside an action group can be safely executed in parallel.</td></tr><tr><td id='m_expectedOutcomes'>expectedOutcomes</td><td>xsd:list[<a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationOutcome.html'>RecommendationOutcome</a>]</td><td>The expected condition of one or more VMstore if the recommendation is applied.</td></tr><tr><td id='m_feedback'>feedback</td><td><a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationFeedback.html'>RecommendationFeedback</a></td><td>The user feedback on the recommendation. Only applied when Recommendation state is
+ AVAILABLE or AVAILABLE_ACKED.</td></tr><tr><td id='m_issues'>issues</td><td>xsd:list[<a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationAnalysis.html'>RecommendationAnalysis</a>]</td><td>The predicted issues of one or more VMstores from analysis for the next 7 days.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_acceptedTime'>acceptedTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Time when recommendation is accepted by user in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz.</td></tr><tr><td id='m_acknowledgedTime'>acknowledgedTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The acknowledged time by user in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz.</td></tr><tr><td id='m_completionTime'>completionTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Recommendation completion time in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz.</td></tr><tr><td id='m_creationTime'>creationTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Recommendation creation time in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz.</td></tr><tr><td id='m_executionState'>executionState</td><td>AVAILABLE | PENDING | RUNNING | RUNNING_ERROR | COMPLETED_OK | COMPLETED_FAILED | CANCELLED_PENDING | COMPLETED_CANCELLED</td><td>Execution state of the Recommendation.<table class='info'><tr><td>AVAILABLE</td><td>Recommendation is ready to be executed</td></tr><tr><td>PENDING</td><td>Recommendation is accepted by the user and ready to execute</td></tr><tr><td>RUNNING</td><td>Recommendation is being executed</td></tr><tr><td>RUNNING_ERROR</td><td>Recommendation has encountered an error due to setup or environment</td></tr><tr><td>COMPLETED_OK</td><td>Recommendation has finished and all operations were successful</td></tr><tr><td>COMPLETED_FAILED</td><td>Recommendation has finished with an error</td></tr><tr><td>CANCELLED_PENDING</td><td>Recommendation is in process of being canceled</td></tr><tr><td>COMPLETED_CANCELLED</td><td>Recommendation has been cancelled by user</td></tr></table></td></tr><tr><td id='m_expirationTime'>expirationTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The Recommendation expiration time in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz.</td></tr><tr><td id='m_groupId'>groupId</td><td>xsd:string</td><td>Returns the groupId. The attribute is undocumented by default and used only for testing.</td></tr><tr><td id='m_id'>id</td><td>xsd:string</td><td>Recommendation Tintri UUID</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the recommendation was updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz.</td></tr><tr><td id='m_state'>state</td><td>AVAILABLE | AVAILABLE_ACKED | ACCEPTED | CANCELLED | INVALIDATED | EXPIRED | REFRESH | NO_RECOMMENDATION_NEEDED | NO_RECOMMENDATION_AVAILABLE</td><td>Recommendation state.<table class='info'><tr><td>AVAILABLE</td><td>This recommendation is available for user to view</td></tr><tr><td>AVAILABLE_ACKED</td><td>User has viewed the recommendation</td></tr><tr><td>ACCEPTED</td><td>User has accepted the recommendation</td></tr><tr><td>CANCELLED</td><td>User has cancelled the accepted recommendation</td></tr><tr><td>INVALIDATED</td><td>Recommendation can no longer be accepted. See stateReason for details</td></tr><tr><td>EXPIRED</td><td>Recommendation has expired because it is outdated</td></tr><tr><td>REFRESH</td><td>Recommendation is being refreshed</td></tr><tr><td>NO_RECOMMENDATION_NEEDED</td><td>Pool is balanced and no action is required</td></tr><tr><td>NO_RECOMMENDATION_AVAILABLE</td><td>Recommendation has not been produced yet</td></tr></table></td></tr><tr><td id='m_stateReason'>stateReason</td><td>INVALID_VMS_CHANGED | INVALID_POOL_MEMBER_DELETED | INVALID_VMS_DONT_MIGRATE_NOW | INVALID_SOME_MOUNT_DIRECTORIES_WERE_DELETED | INVALID_TARGET_VMSTORE_TOO_FULL | UNAVAILABLE_UNDER_CONSTRUCTION | UNAVAILABLE_NO_SUITABLE_VMS_TO_MOVE | UNAVAILABLE_POOL_RESOURCES_EXHAUSTED | UNAVAILABLE_NO_VALID_RECOMMENDATIONS | UNAVAILABLE_TOO_MANY_VMS_DONT_MIGRATE_NOW | UNAVAILABLE_INSUFFICIENT_LICENSES</td><td>Reason that the recommendation is invalidated.<table class='info'><tr><td>INVALID_VMS_CHANGED</td><td>Some of the selected VMs properties have changed which make the recommendation no longer valid.</td></tr><tr><td>INVALID_POOL_MEMBER_DELETED</td><td>Some VMstores from the pool were deleted.</td></tr><tr><td>INVALID_VMS_DONT_MIGRATE_NOW</td><td>Some selected VMs have migration rule as not migrate for now.</td></tr><tr><td>INVALID_SOME_MOUNT_DIRECTORIES_WERE_DELETED</td><td>Some mount directories used in the recommendation are no longer present.</td></tr><tr><td>INVALID_TARGET_VMSTORE_TOO_FULL</td><td>Executing current recommendation causes space problem on the target VMstore.</td></tr><tr><td>UNAVAILABLE_UNDER_CONSTRUCTION</td><td>Recommendation is being generated.</td></tr><tr><td>UNAVAILABLE_NO_SUITABLE_VMS_TO_MOVE</td><td>Not able to identify any VMs to migrate due to VM migration rules.</td></tr><tr><td>UNAVAILABLE_POOL_RESOURCES_EXHAUSTED</td><td>Not able to identify any VMs to migrate that could improve the pool metric</td></tr><tr><td>UNAVAILABLE_NO_VALID_RECOMMENDATIONS</td><td>User has applied migration rules which invalidated all recommendations.</td></tr><tr><td>UNAVAILABLE_TOO_MANY_VMS_DONT_MIGRATE_NOW</td><td>Too many selected VMs have migration rule as not migrate for now.</td></tr><tr><td>UNAVAILABLE_INSUFFICIENT_LICENSES</td><td>Sufficient licenses are not available.</td></tr></table></td></tr><tr><td id='m_vmAffinityNotNowTintriUuids'>vmAffinityNotNowTintriUuids</td><td>xsd:list[xsd:string]</td><td>A list of Tintri VM UUIDs that will not be included in the current Recommendation, but
+ may be indcluded in the next Recommendation. Valid only when Recommendation state is
+ AVAILABLE or AVAILABLE_ACKED.</td></tr><tr><td id='m_vmstorePoolId'>vmstorePoolId</td><td>xsd:string</td><td>VMstorePool Tintri UUID that the Recommendation associated with.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

@@ -1,0 +1,44 @@
+<HTML><HEAD><TITLE>XML element Task</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: Task</h2>Contains information about asynchronous job operations.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.Task",
+   "<a href='#m_createDate'>createDate</a>": &ltDate&gt,
+   "<a href='#m_isCancelable'>isCancelable</a>": &ltBoolean&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_localAlias'>localAlias</a>": &ltString&gt,
+   "<a href='#m_progressDescription'>progressDescription</a>": &ltString&gt,
+   "<a href='#m_progressError'>progressError</a>": &ltBoolean&gt,
+   "<a href='#m_progressPercent'>progressPercent</a>": &ltNumber&gt,
+   "<a href='#m_progressSecondsRemaining'>progressSecondsRemaining</a>": &ltNumber&gt,
+   "<a href='#m_state'>state</a>": 'QUEUED' | 'RUNNING' | 'SUCCESS' | 'FAILED' | 'CANCELLED' | 'CANCEL_PENDING' | 'ACKNOWLEDGED',
+   "<a href='#m_targetIds'>targetIds</a>": &ltString&gt,
+   "<a href='#m_targetType'>targetType</a>": 'VM' | 'VDISK' | 'SNAPSHOT' | 'JOB' | 'ALERTS' | 'DATASTORE_STAT' | 'VM_STAT' | 'VDISK_STAT' | 'SERVICE_GROUP',
+   "<a href='#m_type'>type</a>": 'SNAPSHOT' | 'CLONE' | 'REMOTE_COPY' | 'FAILOVER_TEST' | 'FAILOVER' | 'VM_SNAPSHOT_SYNC' | 'RECREATE_REPL_CONFIG' | 'SYNC_VM' | 'RELOCATE_VM' | 'SNAPSHOT_STORAGE_OBJECT' | 'CLONE_STORAGE_OBJECT' | 'CREATE_STORAGE_OBJECT' | 'UPDATE_STORAGE_OBJECT' | 'DELETE_STORAGE_OBJECT' | 'REVERT_STORAGE_OBJECT' | 'BIND_STORAGE_OBJECT' | 'UNBIND_STORAGE_OBJECT',
+   "<a href='#m_jobDone'>jobDone</a>": &ltBoolean&gt,
+   "<a href='#m_property'>properties</a>": [<a href='../../../../../../com/tintri/api/rest/v310/dto/Task.TaskProperty.html'>TaskProperty</a>],
+   "<a href='#m_uuid'>uuid</a>": <a href='../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_jobDone'>jobDone</td><td>xsd:boolean</td><td>'True' represents the job is done and is in the following states:
+  CANCELLED, FAILED, or SUCCESS.</td></tr><tr><td id='m_property'>property (wrapped by properties)</td><td>xsd:list[<a href='../../../../../../com/tintri/api/rest/v310/dto/Task.TaskProperty.html'>TaskProperty</a>]</td><td>The list of TaskProperty's represents additional information about the job and target object.
+ 
+ For example,  In case of "remote copy" operation “replLinkName” gives additional information about "name of datastore replication path"</td></tr><tr><td id='m_uuid'>uuid</td><td><a href='../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Unique Tintri UUID for the object</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_createDate'>createDate</td><td>xsd:datetime</td><td>Job create date</td></tr><tr><td id='m_isCancelable'>isCancelable</td><td>xsd:boolean</td><td>Flag to specify whether a Job is cancelable or not</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz</td></tr><tr><td id='m_localAlias'>localAlias</td><td>xsd:string</td><td>Alias used for the entity instance in this Tintri API server.
+ If an alias is not set, then localAlias is not returned.</td></tr><tr><td id='m_progressDescription'>progressDescription</td><td>xsd:string</td><td>Job progress state description. Not all tasks set the progress state.</td></tr><tr><td id='m_progressError'>progressError</td><td>xsd:boolean</td><td>Flag denoting whether the progress has a progress error or not</td></tr><tr><td id='m_progressPercent'>progressPercent</td><td>xsd:float</td><td>Job percentage progress (0 - 100%)</td></tr><tr><td id='m_progressSecondsRemaining'>progressSecondsRemaining</td><td>xsd:long</td><td>Seconds remaining in job</td></tr><tr><td id='m_state'>state</td><td>QUEUED | RUNNING | SUCCESS | FAILED | CANCELLED | CANCEL_PENDING | ACKNOWLEDGED</td><td>Current job state.<table class='info'><tr><td>QUEUED</td><td>Job is queued</td></tr><tr><td>RUNNING</td><td>Job is running</td></tr><tr><td>SUCCESS</td><td>Job finished successfully</td></tr><tr><td>FAILED</td><td>Job finished in failure</td></tr><tr><td>CANCELLED</td><td>Job was cancelled</td></tr><tr><td>CANCEL_PENDING</td><td>Job has a cancel pending</td></tr><tr><td>ACKNOWLEDGED</td><td>Not used at this time</td></tr></table></td></tr><tr><td id='m_targetIds'>targetIds</td><td>xsd:list[xsd:string]</td><td>The UUIDs of the target resource</td></tr><tr><td id='m_targetType'>targetType</td><td>VM | VDISK | SNAPSHOT | JOB | ALERTS | DATASTORE_STAT | VM_STAT | VDISK_STAT | SERVICE_GROUP</td><td>The type of the job target<table class='info'><tr><td>VM</td><td>Virtual machine</td></tr><tr><td>VDISK</td><td>Virtual disk</td></tr><tr><td>SNAPSHOT</td><td>Snapshot</td></tr><tr><td>JOB</td><td>Job</td></tr><tr><td>ALERTS</td><td>Alert</td></tr><tr><td>DATASTORE_STAT</td><td>Datastore statistics</td></tr><tr><td>VM_STAT</td><td>Virtual Machine statistics</td></tr><tr><td>VDISK_STAT</td><td>Virtual disk statistics</td></tr><tr><td>SERVICE_GROUP</td><td>Service group</td></tr></table></td></tr><tr><td id='m_type'>type</td><td>SNAPSHOT | CLONE | REMOTE_COPY | FAILOVER_TEST | FAILOVER | VM_SNAPSHOT_SYNC | RECREATE_REPL_CONFIG | SYNC_VM | RELOCATE_VM | SNAPSHOT_STORAGE_OBJECT | CLONE_STORAGE_OBJECT | CREATE_STORAGE_OBJECT | UPDATE_STORAGE_OBJECT | DELETE_STORAGE_OBJECT | REVERT_STORAGE_OBJECT | BIND_STORAGE_OBJECT | UNBIND_STORAGE_OBJECT</td><td>Job type<table class='info'><tr><td>SNAPSHOT</td><td>Snapshot job</td></tr><tr><td>CLONE</td><td>Clone job</td></tr><tr><td>REMOTE_COPY</td><td>Remote Copy job</td></tr><tr><td>FAILOVER_TEST</td><td>Failover test job</td></tr><tr><td>FAILOVER</td><td>Failover job</td></tr><tr><td>VM_SNAPSHOT_SYNC</td><td>Deprecated</td></tr><tr><td>RECREATE_REPL_CONFIG</td><td>Recreate replication configuation job</td></tr><tr><td>SYNC_VM</td><td>Sync virtual machine job</td></tr><tr><td>RELOCATE_VM</td><td>Relocate virtual machine job</td></tr><tr><td>SNAPSHOT_STORAGE_OBJECT</td><td>Snapshot storage object job</td></tr><tr><td>CLONE_STORAGE_OBJECT</td><td>Clone storage object job</td></tr><tr><td>CREATE_STORAGE_OBJECT</td><td>Create storage object job</td></tr><tr><td>UPDATE_STORAGE_OBJECT</td><td>Update storage object job</td></tr><tr><td>DELETE_STORAGE_OBJECT</td><td>Delete storage object job</td></tr><tr><td>REVERT_STORAGE_OBJECT</td><td>Revert storage object job</td></tr><tr><td>BIND_STORAGE_OBJECT</td><td>Bind storage object job</td></tr><tr><td>UNBIND_STORAGE_OBJECT</td><td>Unbind storage object job</td></tr></table></td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

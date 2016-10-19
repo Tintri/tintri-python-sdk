@@ -1,0 +1,43 @@
+<HTML><HEAD><TITLE>XML element ReplLinkStat</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: ReplLinkStat</h2>Performance information and state at any given time point for a replication link within the cluster.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.perf.ReplLinkStat",
+   "<a href='#m_aggregatedLinkStatus'>aggregatedLinkStatus</a>": 'UNKNOWN' | 'DELETED' | 'WORKING' | 'FAULTY',
+   "<a href='#m_intervalSeconds'>intervalSeconds</a>": &ltNumber&gt,
+   "<a href='#m_maxLag'>maxLag</a>": &ltNumber&gt,
+   "<a href='#m_numOfVmsLaggingOverThreshold'>numOfVmsLaggingOverThreshold</a>": &ltNumber&gt,
+   "<a href='#m_numOfVmsPaused'>numOfVmsPaused</a>": &ltNumber&gt,
+   "<a href='#m_numOfVmsReplicating'>numOfVmsReplicating</a>": &ltNumber&gt,
+   "<a href='#m_numOfVmsWithReplError'>numOfVmsWithReplError</a>": &ltNumber&gt,
+   "<a href='#m_paused'>paused</a>": &ltBoolean&gt,
+   "<a href='#m_testedWhen'>testedWhen</a>": &ltDate&gt,
+   "<a href='#m_throughputMbPs'>throughputMbPs</a>": &ltNumber&gt,
+   "<a href='#m_timeEnd'>timeEnd</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_timeStart'>timeStart</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_aggregatedLinkError'>aggregatedLinkError</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a>,
+   "<a href='#m_faultReasons'>faultReasons</a>": ['NO_FAULT' | 'VMA_LAGGING' | 'VM_CONFIG_ERROR' | 'LINK_TEST_FAILED'],
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_aggregatedLinkError'>aggregatedLinkError</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a></td><td>Error resulted from testing the replication link or from any the VMs on this replication link.</td></tr><tr><td id='m_faultReasons'>faultReasons</td><td>xsd:list[NO_FAULT | VMA_LAGGING | VM_CONFIG_ERROR | LINK_TEST_FAILED]</td><td>A list of possible reasons for a faulty link.<table class='info'><tr><td>NO_FAULT</td><td>Essentially the link is WORKING or UNKNOWN</td></tr><tr><td>VMA_LAGGING</td><td>At least one VM is lagging on that link for the given time period</td></tr><tr><td>VM_CONFIG_ERROR</td><td>At least one VM has encountered replication config error for the given time period</td></tr><tr><td>LINK_TEST_FAILED</td><td>Test link call returned error</td></tr></table></td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_aggregatedLinkStatus'>aggregatedLinkStatus</td><td>UNKNOWN | DELETED | WORKING | FAULTY</td><td>Computed and aggregated status of the link.<table class='info'><tr><td>UNKNOWN</td><td>Typically used when TGC in unable to test the link directly. Contract here is 'test status' can be unknown
+ while aggregated status by default will be WORKING or carry over of the last aggregated state.</td></tr><tr><td>DELETED</td><td>The link has been deleted. We will be having data retained for a while and hence need to model deleted.</td></tr><tr><td>WORKING</td><td>Working as expected, can be shown as RED on UI.</td></tr><tr><td>FAULTY</td><td>Link is faulty:  an error might have occurred,
+ a VM configured on this link might have encountered an error, or
+ a VM configured on this link might be lagging beyond acceptable numbers</td></tr></table></td></tr><tr><td id='m_intervalSeconds'>intervalSeconds</td><td>xsd:long</td><td>The interval between datapoints in seconds</td></tr><tr><td id='m_maxLag'>maxLag</td><td>xsd:int</td><td>Largest lag value(minutes) among the VMs on this replication link.</td></tr><tr><td id='m_numOfVmsLaggingOverThreshold'>numOfVmsLaggingOverThreshold</td><td>xsd:int</td><td>Number of VMs that lag on this replication link for this period.</td></tr><tr><td id='m_numOfVmsPaused'>numOfVmsPaused</td><td>xsd:int</td><td>Number of VMs which are paused on this replication link for this period.</td></tr><tr><td id='m_numOfVmsReplicating'>numOfVmsReplicating</td><td>xsd:int</td><td>Number of VMs which are configured to replicate on this link.</td></tr><tr><td id='m_numOfVmsWithReplError'>numOfVmsWithReplError</td><td>xsd:int</td><td>Number of VMs which are found with an error on this link for this period.</td></tr><tr><td id='m_paused'>paused</td><td>xsd:boolean</td><td>'True' indicates that the link is paused and no data is transferring.
+ 'False' indicates the link is active and transferring data.</td></tr><tr><td id='m_testedWhen'>testedWhen</td><td>xsd:datetime</td><td>Timestamp when the link was last tested.</td></tr><tr><td id='m_throughputMbPs'>throughputMbPs</td><td>xsd:double</td><td>Data replicated in this duration. (Mb/sec)</td></tr><tr><td id='m_timeEnd'>timeEnd</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The end time of the interval.</td></tr><tr><td id='m_timeStart'>timeStart</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The start time of the interval.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

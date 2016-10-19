@@ -1,0 +1,35 @@
+<HTML><HEAD><TITLE>XML element VMstoreDownloadableReportFilter</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VMstoreDownloadableReportFilter</h2>Contains the filter properties for downloadable VMstore reports.
+ Properties specified in VMstoreDownloadableReportFilter are used in creating
+ a URL that is used to download a report with the specified properties.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.VMstoreDownloadableReportFilter",
+   "<a href='#m_attachment'>attachment</a>": &ltString&gt,
+   "<a href='#m_attributes'>attributes</a>": 'HostName' | 'Vmcount' | 'ConnectionState' | 'LastConnected' | 'Model' | 'OsVersion' | 'SerialNunmber' | 'ReadIops' | 'WriteIops' | 'TotalIops' | 'ReadMBps' | 'WriteMBps' | 'TotalMBps' | 'ReservesAutoAllocated' | 'ReservesPinned' | 'TotalLatency' | 'HostLatency' | 'NetworkLatency' | 'StorageLatency' | 'DiskLatency' | 'FlashHitPercent' | 'SpaceProvisioned' | 'SpaceUsedLive' | 'SpaceUsedTintriSnapshots' | 'SpaceUsedHypervisorSnaphots' | 'SpaceUsedOther' | 'SpaceRemainingPhysical' | 'SpaceRemainingDays' | 'SpaceUsedChange' | 'SpaceUsedChangePercent' | 'SpaceUsed' | 'SpaceUsedDifferenceFromMaxInSet' | 'ReplicationTimeRemaining' | 'ReplicationBytesRemaining' | 'ReplicationIncomingLogicalMBps' | 'ReplicationIncomingPhysicalMBps' | 'ReplicationOutgoingLogicalMBps' | 'ReplicationOutgoingPhysicalMBps',
+   "<a href='#m_format'>format</a>": 'CSV' | 'JSON',
+   "<a href='#m_since'>since</a>": &ltString&gt,
+   "<a href='#m_until'>until</a>": &ltString&gt,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_attachment'>attachment</td><td>xsd:string</td><td>Downloadable report name.</td></tr><tr><td id='m_attributes'>attributes</td><td>xsd:list[HostName | Vmcount | ConnectionState | LastConnected | Model | OsVersion | SerialNunmber | ReadIops | WriteIops | TotalIops | ReadMBps | WriteMBps | TotalMBps | ReservesAutoAllocated | ReservesPinned | TotalLatency | HostLatency | NetworkLatency | StorageLatency | DiskLatency | FlashHitPercent | SpaceProvisioned | SpaceUsedLive | SpaceUsedTintriSnapshots | SpaceUsedHypervisorSnaphots | SpaceUsedOther | SpaceRemainingPhysical | SpaceRemainingDays | SpaceUsedChange | SpaceUsedChangePercent | SpaceUsed | SpaceUsedDifferenceFromMaxInSet | ReplicationTimeRemaining | ReplicationBytesRemaining | ReplicationIncomingLogicalMBps | ReplicationIncomingPhysicalMBps | ReplicationOutgoingLogicalMBps | ReplicationOutgoingPhysicalMBps]</td><td>A list of attributes that are to be included in the report.<table class='info'><tr><td>HostName</td><td></td></tr><tr><td>Vmcount</td><td></td></tr><tr><td>ConnectionState</td><td></td></tr><tr><td>LastConnected</td><td></td></tr><tr><td>Model</td><td></td></tr><tr><td>OsVersion</td><td></td></tr><tr><td>SerialNunmber</td><td></td></tr><tr><td>ReadIops</td><td></td></tr><tr><td>WriteIops</td><td></td></tr><tr><td>TotalIops</td><td></td></tr><tr><td>ReadMBps</td><td></td></tr><tr><td>WriteMBps</td><td></td></tr><tr><td>TotalMBps</td><td></td></tr><tr><td>ReservesAutoAllocated</td><td></td></tr><tr><td>ReservesPinned</td><td></td></tr><tr><td>TotalLatency</td><td></td></tr><tr><td>HostLatency</td><td></td></tr><tr><td>NetworkLatency</td><td></td></tr><tr><td>StorageLatency</td><td></td></tr><tr><td>DiskLatency</td><td></td></tr><tr><td>FlashHitPercent</td><td></td></tr><tr><td>SpaceProvisioned</td><td></td></tr><tr><td>SpaceUsedLive</td><td></td></tr><tr><td>SpaceUsedTintriSnapshots</td><td></td></tr><tr><td>SpaceUsedHypervisorSnaphots</td><td></td></tr><tr><td>SpaceUsedOther</td><td></td></tr><tr><td>SpaceRemainingPhysical</td><td></td></tr><tr><td>SpaceRemainingDays</td><td></td></tr><tr><td>SpaceUsedChange</td><td></td></tr><tr><td>SpaceUsedChangePercent</td><td></td></tr><tr><td>SpaceUsed</td><td></td></tr><tr><td>SpaceUsedDifferenceFromMaxInSet</td><td></td></tr><tr><td>ReplicationTimeRemaining</td><td></td></tr><tr><td>ReplicationBytesRemaining</td><td></td></tr><tr><td>ReplicationIncomingLogicalMBps</td><td></td></tr><tr><td>ReplicationIncomingPhysicalMBps</td><td></td></tr><tr><td>ReplicationOutgoingLogicalMBps</td><td></td></tr><tr><td>ReplicationOutgoingPhysicalMBps</td><td></td></tr></table></td></tr><tr><td id='m_format'>format</td><td>CSV | JSON</td><td>Downloadable report format.<table class='info'><tr><td>CSV</td><td>Comma Separated Values</td></tr><tr><td>JSON</td><td>JavaScript Object Notation</td></tr></table></td></tr><tr><td id='m_since'>since</td><td>xsd:string</td><td>The start time of the report data collection period specifed in
+ ISO8601 format: yyyy-MM-dd'T'HH:mm:ss.SSSZ.  If not specified,
+ defaults to the latest time point.
+ .</td></tr><tr><td id='m_until'>until</td><td>xsd:string</td><td>The end time of the report data collection period specifed in
+ ISO8601 format: yyyy-MM-dd'T'HH:mm:ss.SSSZ.  If not specified,
+ defaults to the latest time point.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

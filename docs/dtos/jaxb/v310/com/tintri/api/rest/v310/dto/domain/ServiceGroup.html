@@ -1,0 +1,61 @@
+<HTML><HEAD><TITLE>XML element ServiceGroup</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: ServiceGroup</h2>Managed Entity DTO for ServiceGroup. It is primarily collection of members with associated meta data and supporting
+ specific operations.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.ServiceGroup",
+   "<a href='#m_createTime'>createTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_creatorType'>creatorType</a>": &ltString&gt,
+   "<a href='#m_deleted'>deleted</a>": &ltBoolean&gt,
+   "<a href='#m_description'>description</a>": &ltString&gt,
+   "<a href='#m_lastConfigChangedTime'>lastConfigChangedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_lastNameDescriptionChangedTime'>lastNameDescriptionChangedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_lastQoSConfigChangedTime'>lastQoSConfigChangedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_localAlias'>localAlias</a>": &ltString&gt,
+   "<a href='#m_memberCount'>memberCount</a>": &ltNumber&gt,
+   "<a href='#m_name'>name</a>": &ltString&gt,
+   "<a href='#m_replicationLagStatus'>replicationLagStatus</a>": &ltNumber&gt,
+   "<a href='#m_staticMemberCount'>staticMemberCount</a>": &ltNumber&gt,
+   "<a href='#m_groupPriorityHigher'>groupsPrioritiesHigher</a>": [&ltString&gt],
+   "<a href='#m_lastReplError'>lastReplError</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a>,
+   "<a href='#m_member'>members</a>": [<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupMember.html'>ServiceGroupMember</a>],
+   "<a href='#m_protectionPolicy'>protectionPolicy</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/ProtectionPolicy.html'>ProtectionPolicy</a>,
+   "<a href='#m_qosConfig'>qosConfig</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html'>VirtualMachineQoSConfig</a>,
+   "<a href='#m_replConfig'>replConfig</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>,
+   "<a href='#m_rules'>rules</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupRules.html'>ServiceGroupRules</a>,
+   "<a href='#m_snapshotSchedule'>snapshotSchedules</a>": [<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html'>VirtualMachineSnapshotSchedule</a>],
+   "<a href='#m_srmConfig'>srmConfig</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/srm/SrmConfig.html'>SrmConfig</a>,
+   "<a href='#m_statusMessage'>statusMessages</a>": [<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/StatusMessage.html'>StatusMessage</a>],
+   "<a href='#m_syncReplPolicy'>syncReplPolicy</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/SyncReplPolicy.html'>SyncReplPolicy</a>,
+   "<a href='#m_uuid'>uuid</a>": <a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_groupPriorityHigher'>groupPriorityHigher (wrapped by groupsPrioritiesHigher)</td><td>xsd:list[xsd:string]</td><td>List of service groups with a higher priority than this service group.</td></tr><tr><td id='m_lastReplError'>lastReplError</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a></td><td>Last replication error occurred for any member of the group.</td></tr><tr><td id='m_member'>member (wrapped by members)</td><td>xsd:list[<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupMember.html'>ServiceGroupMember</a>]</td><td>List of members which belong to this service group. It should be noted
+ that service group membership can be defined 'statically' (meaning
+ indicating explicitly which virtual machines are members of a
+ service group) or 'rule based'. When a service group is 'rule based',
+ membership can be lot dynamic.</td></tr><tr><td id='m_protectionPolicy'>protectionPolicy</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/ProtectionPolicy.html'>ProtectionPolicy</a></td><td><b>TgcOnly </b>The protection policy for this service group</td></tr><tr><td id='m_qosConfig'>qosConfig</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html'>VirtualMachineQoSConfig</a></td><td>QoS configuration.</td></tr><tr><td id='m_replConfig'>replConfig</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a></td><td>Associated replication configuration with the service group; typically
+ applied to all members of the service group unless those are overwritten
+ explicitly.</td></tr><tr><td id='m_rules'>rules</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupRules.html'>ServiceGroupRules</a></td><td>Rules define the criteria for membership.
+ Current rules consist of hypervisor paths and name patterns.</td></tr><tr><td id='m_snapshotSchedule'>snapshotSchedule (wrapped by snapshotSchedules)</td><td>xsd:list[<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html'>VirtualMachineSnapshotSchedule</a>]</td><td>List of all snapshot schedules associated with service group; typically
+ associated with all member VMs.</td></tr><tr><td id='m_srmConfig'>srmConfig</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/srm/SrmConfig.html'>SrmConfig</a></td><td>Associated VMware Site Recovery Manager (SRM) Configuration with the
+ service group; can be null.</td></tr><tr><td id='m_statusMessage'>statusMessage (wrapped by statusMessages)</td><td>xsd:list[<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/StatusMessage.html'>StatusMessage</a>]</td><td><b>TgcOnly </b>Configuration messages for the Service Group</td></tr><tr><td id='m_syncReplPolicy'>syncReplPolicy</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/SyncReplPolicy.html'>SyncReplPolicy</a></td><td>Associated synchronous replication policy information</td></tr><tr><td id='m_uuid'>uuid</td><td><a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Unique Tintri UUID for the object</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_createTime'>createTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Time stamp when the object is created.</td></tr><tr><td id='m_creatorType'>creatorType</td><td>xsd:string</td><td>The creatorType. At present it is 'user defined' type only.</td></tr><tr><td id='m_deleted'>deleted</td><td>xsd:boolean</td><td>Indicates if this service group has been deleted on the server side.</td></tr><tr><td id='m_description'>description</td><td>xsd:string</td><td>Description associated with the service group.</td></tr><tr><td id='m_lastConfigChangedTime'>lastConfigChangedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Time corresponding to the latest configuration change.</td></tr><tr><td id='m_lastNameDescriptionChangedTime'>lastNameDescriptionChangedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Time stamp when the object is last updated.</td></tr><tr><td id='m_lastQoSConfigChangedTime'>lastQoSConfigChangedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Time corresponding to the latest QoS configuration change.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz</td></tr><tr><td id='m_localAlias'>localAlias</td><td>xsd:string</td><td>Alias used for the entity instance in this Tintri API server.
+ If an alias is not set, then localAlias is not returned.</td></tr><tr><td id='m_memberCount'>memberCount</td><td>xsd:int</td><td>Total number of members, both static and non-static, that belong to this service group.</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>Name of the service group.</td></tr><tr><td id='m_replicationLagStatus'>replicationLagStatus</td><td>xsd:long</td><td>Replication lag status associated with the service group.</td></tr><tr><td id='m_staticMemberCount'>staticMemberCount</td><td>xsd:int</td><td>Total number of static members that belong to this service group.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

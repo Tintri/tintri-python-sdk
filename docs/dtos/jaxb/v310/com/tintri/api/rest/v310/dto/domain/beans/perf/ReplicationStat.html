@@ -1,0 +1,46 @@
+<HTML><HEAD><TITLE>XML element ReplicationStat</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: ReplicationStat</h2>Contains core replication performance properties of a replication
+ configuration at a given time point.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.perf.ReplicationStat",
+   "<a href='#m_bytesRemainingMB'>bytesRemainingMB</a>": &ltNumber&gt,
+   "<a href='#m_oneshotProgressPercent'>oneshotProgressPercent</a>": &ltNumber&gt,
+   "<a href='#m_oneshotTimeRemainingSeconds'>oneshotTimeRemainingSeconds</a>": &ltNumber&gt,
+   "<a href='#m_pathCount'>pathCount</a>": &ltNumber&gt,
+   "<a href='#m_replicationPathId'>replicationPathId</a>": &ltString&gt,
+   "<a href='#m_throughputIncomingLogicalMBps'>throughputIncomingLogicalMBps</a>": &ltNumber&gt,
+   "<a href='#m_throughputIncomingPhysicalMBps'>throughputIncomingPhysicalMBps</a>": &ltNumber&gt,
+   "<a href='#m_throughputLogicalMBpday'>throughputLogicalMBpday</a>": &ltNumber&gt,
+   "<a href='#m_throughputLogicalMBps'>throughputLogicalMBps</a>": &ltNumber&gt,
+   "<a href='#m_throughputPhysicalMBpday'>throughputPhysicalMBpday</a>": &ltNumber&gt,
+   "<a href='#m_throughputPhysicalMBps'>throughputPhysicalMBps</a>": &ltNumber&gt,
+   "<a href='#m_timeRemainingSeconds'>timeRemainingSeconds</a>": &ltNumber&gt,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_bytesRemainingMB'>bytesRemainingMB</td><td>xsd:double</td><td>Logical amount of aggregated data(MB) yet to be replicated over for that VM, for all applicable ongoing replications.</td></tr><tr><td id='m_oneshotProgressPercent'>oneshotProgressPercent</td><td>xsd:double</td><td>Percentage progress of oneshot replication</td></tr><tr><td id='m_oneshotTimeRemainingSeconds'>oneshotTimeRemainingSeconds</td><td>xsd:int</td><td>Approximate number of seconds remaining for oneshot to complete.</td></tr><tr><td id='m_pathCount'>pathCount</td><td>xsd:int</td><td>Number of replication links.</td></tr><tr><td id='m_replicationPathId'>replicationPathId</td><td>xsd:string</td><td>Replication link / replication destination to identify where the performance statistics
+ are fetched from.
+ Note this attribute is populated only for the
+ <script>
+ create_link("jaxrs/v310/v310/vm/{vmId}/statsRealtime/index.html", "VM statsRealtime");
+ </script>
+  and 
+ <script>
+ create_link("jaxrs/v310/v310/vm/{vmId}/statsHistoric/index.html", "VM statsHistoric");
+ </script>
+  APIs.</td></tr><tr><td id='m_throughputIncomingLogicalMBps'>throughputIncomingLogicalMBps</td><td>xsd:double</td><td>The destination's incoming logical replication throughput, in megabytes per second.</td></tr><tr><td id='m_throughputIncomingPhysicalMBps'>throughputIncomingPhysicalMBps</td><td>xsd:double</td><td>The destination's incoming physical replication throughput, in megabytes per second.</td></tr><tr><td id='m_throughputLogicalMBpday'>throughputLogicalMBpday</td><td>xsd:double</td><td>The outgoing logical replication throughput per day, in megabytes per second.</td></tr><tr><td id='m_throughputLogicalMBps'>throughputLogicalMBps</td><td>xsd:double</td><td>The outgoing logical replication throughput, in megabytes per second.</td></tr><tr><td id='m_throughputPhysicalMBpday'>throughputPhysicalMBpday</td><td>xsd:double</td><td>The outgoing physical replication throughput per day, in megabytes per second.</td></tr><tr><td id='m_throughputPhysicalMBps'>throughputPhysicalMBps</td><td>xsd:double</td><td>The outgoing physical replication throughput, in megabytes per second.</td></tr><tr><td id='m_timeRemainingSeconds'>timeRemainingSeconds</td><td>xsd:long</td><td>Time to complete the replication in seconds - replicating all available snapshots.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

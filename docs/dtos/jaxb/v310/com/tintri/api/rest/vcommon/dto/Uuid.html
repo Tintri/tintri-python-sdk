@@ -1,0 +1,38 @@
+<HTML><HEAD><TITLE>XML element Uuid</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: Uuid</h2>Class which models Tintri UUID. Right now we are using it for two purposes:
+ - to model Tintri UUID for VM and
+ - to model Tintri UUID for default datastore (which is simply 'default' string
+      for now).
+
+ Rest of the methods are utility methods.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.vcommon.dto.Uuid",
+   "<a href='#m_uuid'>uuid</a>": &ltString&gt,
+   "<a href='#m_entityTC'>entityTC</a>": 'PLATFORM' | 'DATA_STORE' | 'VIRTUAL_MACHINE' | 'HYPERVISOR_CONNECTION' | 'SNAPSHOT' | 'VIRTUAL_DISK' | 'TINTRI_CENTER' | 'JOB' | 'LICENSE' | 'VMSTORE' | 'SERVICE_GROUP' | 'GROUP_DISASTER_RECOVERY' | 'USER_ACCOUNT' | 'USER_ROLE' | 'ALERTS' | 'SESSION' | 'REPORT' | 'AUTO_SUPPORT' | 'SRA' | 'REPL_LINK' | 'CLUSTER_CONFIG' | 'USER_AGREEMENT' | 'CINDER' | 'PROFILER' | 'ADMIN' | 'VMSTORE_POOL',
+   "<a href='#m_uuid'>uuid</a>": &ltString&gt,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_entityTC'>entityTC</td><td>PLATFORM | DATA_STORE | VIRTUAL_MACHINE | HYPERVISOR_CONNECTION | SNAPSHOT | VIRTUAL_DISK | TINTRI_CENTER | JOB | LICENSE | VMSTORE | SERVICE_GROUP | GROUP_DISASTER_RECOVERY | USER_ACCOUNT | USER_ROLE | ALERTS | SESSION | REPORT | AUTO_SUPPORT | SRA | REPL_LINK | CLUSTER_CONFIG | USER_AGREEMENT | CINDER | PROFILER | ADMIN | VMSTORE_POOL</td><td><table class='info'><tr><td>PLATFORM</td><td>Platform entity</td></tr><tr><td>DATA_STORE</td><td>Datastore entity</td></tr><tr><td>VIRTUAL_MACHINE</td><td>Virtual machine entity / instance</td></tr><tr><td>HYPERVISOR_CONNECTION</td><td>Entity which represents connection to a hypervisor (e.g. vCenter)</td></tr><tr><td>SNAPSHOT</td><td>Entity representing a snapshot</td></tr><tr><td>VIRTUAL_DISK</td><td>Entity representing a virtual disk associated with a VM or VMs.</td></tr><tr><td>TINTRI_CENTER</td><td>Place holder entity for Tintri Center implementation in subsequent
+ releases.</td></tr><tr><td>JOB</td><td>Virtual machine entity / instance</td></tr><tr><td>LICENSE</td><td>License entity</td></tr><tr><td>VMSTORE</td><td>VmStore entity</td></tr><tr><td>SERVICE_GROUP</td><td>Place holder entity for Service Group implementation in subsequent
+ releases.</td></tr><tr><td>GROUP_DISASTER_RECOVERY</td><td>entity for group disaster recovery implementation</td></tr><tr><td>USER_ACCOUNT</td><td>User Account</td></tr><tr><td>USER_ROLE</td><td>Role</td></tr><tr><td>ALERTS</td><td>Alerts</td></tr><tr><td>SESSION</td><td>Session. Since we simply use HttpSession and do not create our own sessions explicitly,
+ we keep class name as null.</td></tr><tr><td>REPORT</td><td>Report</td></tr><tr><td>AUTO_SUPPORT</td><td>AutoSupport</td></tr><tr><td>SRA</td><td>Site recovery application, primarily used in exposing VMware specific SRM communication.</td></tr><tr><td>REPL_LINK</td><td>Cluster recognized Replication Link. From VMstore perspective it is a DatastoreReplicationPath which is
+ NOT a managed entity. However, from TGC perspective, these are Replication Links to be viewed, monitored and
+ managed on their own.</td></tr><tr><td>CLUSTER_CONFIG</td><td></td></tr><tr><td>USER_AGREEMENT</td><td></td></tr><tr><td>CINDER</td><td></td></tr><tr><td>PROFILER</td><td></td></tr><tr><td>ADMIN</td><td>Administrative operarations for public API</td></tr><tr><td>VMSTORE_POOL</td><td></td></tr></table></td></tr><tr><td id='m_uuid'>uuid</td><td>xsd:string</td><td>To support Page.sort()</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_uuid'>uuid</td><td>xsd:string</td><td>Returns the Tintri UUID</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

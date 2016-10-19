@@ -1,0 +1,44 @@
+<HTML><HEAD><TITLE>XML element VirtualMachineHostResource</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VirtualMachineHostResource</h2>Represents a host resource node, like resource pool, compute resource, cluster compute resource, and host.
+ Not all attributes are returned for all host resource types.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineHostResource",
+   "<a href='#m_datastoreName'>datastoreName</a>": &ltString&gt,
+   "<a href='#m_displayName'>displayName</a>": &ltString&gt,
+   "<a href='#m_folderId'>folderId</a>": &ltString&gt,
+   "<a href='#m_hostname'>hostname</a>": &ltString&gt,
+   "<a href='#m_id'>id</a>": &ltString&gt,
+   "<a href='#m_isOfTemplate'>isOfTemplate</a>": &ltBoolean&gt,
+   "<a href='#m_isPreferred'>isPreferred</a>": &ltBoolean&gt,
+   "<a href='#m_isStandalone'>isStandalone</a>": &ltBoolean&gt,
+   "<a href='#m_path'>path</a>": &ltString&gt,
+   "<a href='#m_type'>type</a>": 'DATACENTER' | 'TEMPLATE' | 'VIRTUAL_APP' | 'DATASTORE' | 'RESOURCE_POOL' | 'COMPUTE_RESOURCE' | 'CLUSTER_COMPUTE_RESOURCE' | 'VIRTUAL_MACHINE' | 'FOLDER' | 'CLUSTER' | 'HOST' | 'OTHER',
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_datastoreName'>datastoreName</td><td>xsd:string</td><td>Datastore name that the virtual machine belongs to.</td></tr><tr><td id='m_displayName'>displayName</td><td>xsd:string</td><td>The name of the virtual machine host resource.
+ 
+ For VMware and RHEV, the virtual machine's host name, for example esx2345.5tintri.com.
+ For Hyper-V hypervisors, the share name and host is returned, for example
+ \\vmstore.ads.tintri.com\hyperv:ads-host.tintri.com.</td></tr><tr><td id='m_folderId'>folderId</td><td>xsd:string</td><td>Folder managed object reference that the virtual machine belongs to.</td></tr><tr><td id='m_hostname'>hostname</td><td>xsd:string</td><td>The hypervisor host name for example "qa-vcenter1.tintri.com".</td></tr><tr><td id='m_id'>id</td><td>xsd:string</td><td>Hypervisor host resource UUID for VMware and RHEV, for example domain-s5678..
+ 
+ For Hyper-V hypervisors, the share name and host is returned for example
+ \\vmstore.ads.tintri.com\foobar:ads-host.tintri.com.</td></tr><tr><td id='m_isOfTemplate'>isOfTemplate</td><td>xsd:boolean</td><td>'True' indicates this virtual machine host resource is a template, 'false' indicates is is not a template.</td></tr><tr><td id='m_isPreferred'>isPreferred</td><td>xsd:boolean</td><td>Set to 'true' if this virtual machine host resource is the preferred resource for cloning, otherwise set to 'false'.</td></tr><tr><td id='m_isStandalone'>isStandalone</td><td>xsd:boolean</td><td>'True' indicates that the host is stand alone. 'False' indicates that the host belongs to a cluster.</td></tr><tr><td id='m_path'>path</td><td>xsd:string</td><td>The hypervisor specific path to locate this virtual machine host resource in the external hypervisor manager.</td></tr><tr><td id='m_type'>type</td><td>DATACENTER | TEMPLATE | VIRTUAL_APP | DATASTORE | RESOURCE_POOL | COMPUTE_RESOURCE | CLUSTER_COMPUTE_RESOURCE | VIRTUAL_MACHINE | FOLDER | CLUSTER | HOST | OTHER</td><td>The virtual machine host resource type.<table class='info'><tr><td>DATACENTER</td><td>A hypervisor host and virtual machine management server.</td></tr><tr><td>TEMPLATE</td><td>A perfect model copy of a virtual machine that be cloned
+  to create more virtual machines.</td></tr><tr><td>VIRTUAL_APP</td><td>One or more appliacations that run on one or more virtual machines.</td></tr><tr><td>DATASTORE</td><td>Storage area for the hypervisor to hold virtual machine.</td></tr><tr><td>RESOURCE_POOL</td><td>A division of computing resources used to manage allocations
+  between virtual machines.</td></tr><tr><td>COMPUTE_RESOURCE</td><td>Represents a host.</td></tr><tr><td>CLUSTER_COMPUTE_RESOURCE</td><td>Represents a cluster of compute resources.</td></tr><tr><td>VIRTUAL_MACHINE</td><td>A software computer that runs on a host.</td></tr><tr><td>FOLDER</td><td>A container for storing objects.</td></tr><tr><td>CLUSTER</td><td>A virtual server group which enables high-availability solutions</td></tr><tr><td>HOST</td><td>A server that provides computing resources and virtualization
+  software to run virtual machines.</td></tr><tr><td>OTHER</td><td>Hypervisor Resource is unknown.</td></tr></table></td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

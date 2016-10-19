@@ -1,0 +1,52 @@
+<HTML><HEAD><TITLE>XML element VirtualMachineSnapshotInfo</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VirtualMachineSnapshotInfo</h2>This container object has every detail about a Snapshot. Key parts are
+ snapshot schedules, the base snapshot that the VM was cloned from, when
+ the last snapshot was replicated, and etc.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineSnapshotInfo",
+   "<a href='#m_baseCreationTime'>baseCreationTime</a>": &ltDate&gt,
+   "<a href='#m_baseVmName'><del>baseVmName</del></a>": &ltString&gt,
+   "<a href='#m_cloneFromSnapshot'><del>cloneFromSnapshot</del></a>": &ltString&gt,
+   "<a href='#m_highFrequencySnapshotState'>highFrequencySnapshotState</a>": &ltString&gt,
+   "<a href='#m_isSystemDefaultSchedule'>isSystemDefaultSchedule</a>": &ltBoolean&gt,
+   "<a href='#m_latestReplicatedSnapshotTime'>latestReplicatedSnapshotTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_schedulesInternal'>schedulesInternal</a>": &ltString&gt,
+   "<a href='#m_base'><del>base</del></a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a>,
+   "<a href='#m_bases'>bases</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a>],
+   "<a href='#m_cloneFromSnapshots'>cloneFromSnapshots</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/snapshot/SnapshotBasicInfo.html'>SnapshotBasicInfo</a>],
+   "<a href='#m_highFrequencySnapshotConfig'>highFrequencySnapshotConfig</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/HighFrequencySnapshotConfig.html'>HighFrequencySnapshotConfig</a>,
+   "<a href='#m_latest'>latest</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a>,
+   "<a href='#m_latestReplicated'>latestReplicated</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a>,
+   "<a href='#m_schedules'>schedules</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html'>VirtualMachineSnapshotSchedule</a>],
+   "<a href='#m_snapshotIdsWithClone'>snapshotIdsWithClone</a>": [&ltString&gt],
+   "<a href='#m_useDefaultSystemSchedule'>useDefaultSystemSchedule</a>": &ltBoolean&gt,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_base'>base</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a></td><td><b>Deprecated.</b>  Please use bases instead. Deprecated in v310.21.</td></tr><tr><td id='m_bases'>bases</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a>]</td><td>Obtains the base snapshots information. The base snapshots are list of snapshots that the virtual machine was
+ initially cloned from.</td></tr><tr><td id='m_cloneFromSnapshots'>cloneFromSnapshots</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/snapshot/SnapshotBasicInfo.html'>SnapshotBasicInfo</a>]</td><td>Get list of basic information of the base snapshots, including VM name, creation time, snapshot Tintri UUID.</td></tr><tr><td id='m_highFrequencySnapshotConfig'>highFrequencySnapshotConfig</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/HighFrequencySnapshotConfig.html'>HighFrequencySnapshotConfig</a></td><td>Get the high frequency snapshot policy configuration.</td></tr><tr><td id='m_latest'>latest</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a></td><td>Obtains the latest snapshot information.</td></tr><tr><td id='m_latestReplicated'>latestReplicated</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a></td><td>Obtains the snapshot information that was last replicated of all outgoing replication destinations. If there is no outgoing replication configured, it is the last incoming replicated snapshot</td></tr><tr><td id='m_schedules'>schedules</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html'>VirtualMachineSnapshotSchedule</a>]</td><td>Obtains the VM's snapshot schedules.</td></tr><tr><td id='m_snapshotIdsWithClone'>snapshotIdsWithClone</td><td>xsd:list[xsd:string]</td><td>Get list of Tintri Snapshot ID that represents snapshot of this virtual machine that has clone reference count > 0.</td></tr><tr><td id='m_useDefaultSystemSchedule'>useDefaultSystemSchedule</td><td>xsd:boolean</td><td>Check if default system schedules are used</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_baseCreationTime'>baseCreationTime</td><td>xsd:datetime</td><td>Get the creation time of the base snapshot</td></tr><tr><td id='m_baseVmName'>baseVmName</td><td>xsd:string</td><td><b>Deprecated.</b>  Please use vmName in CloneFromSnapshots instead. Deprecated in v310.21.</td></tr><tr><td id='m_cloneFromSnapshot'>cloneFromSnapshot</td><td>xsd:string</td><td><b>Deprecated.</b>  Please use cloneFromSnapshots instead. Deprecated in v310.21.</td></tr><tr><td id='m_highFrequencySnapshotState'>highFrequencySnapshotState</td><td>xsd:string</td><td>The high frequency replication state if the VM is LIVE;
+ 'Disabled' if the VM is not configured or the number of minutes
+ an alert will be generated if it breaches the user specified threshold.
+ i.e. 'Alert after 5 minutes'</td></tr><tr><td id='m_isSystemDefaultSchedule'>isSystemDefaultSchedule</td><td>xsd:boolean</td><td>'True' indicates that the snapshot schedule is the system default. 
+ 'False' indicates a custom snapshot schedule is in affect.</td></tr><tr><td id='m_latestReplicatedSnapshotTime'>latestReplicatedSnapshotTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Obtains the latest replicated snapshot of all outgoing destination time in milliseconds from Jan 1, 1970. 
+ If there is no outgoing replication configured, it is time of last incoming replicated snapshot.</td></tr><tr><td id='m_schedulesInternal'>schedulesInternal</td><td>xsd:string</td><td>Get an internal representation of the snapshot schedules.
+ 
+ This attribute is meant to be used internally for sorting and filtering on Tintri 
+ server side. Not recommended for any API user.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

@@ -1,0 +1,57 @@
+<HTML><HEAD><TITLE>XML element SraDevice</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: SraDevice</h2>This data structure is used in multiple places, for example
+ - Used as TargetDevice in the list of <TargetDevices> in discoverDevices response
+ - Used as TargetDevice in SourceDevice items in discoverDevices response
+ - Used as Device in syncOnce, querySyncStatus responses
+ - Used as Device in prepareReverseReplication, reverseReplication, and restoreReplication
+ 
+ Possible structures in TargetDevice
+
+ <pre>
+ {@code
+ ...
+     <TargetDevices>
+       <TargetDevice key="fog1.tk" id="...">
+         <Name>happyFailoverGroupName</Name>
+       </TargetDevice>
+     </TargetDevices>
+ ...
+ }
+ </pre><table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.recovery.SraDevice",
+   "<a href='#m_id'>id</a>": &ltString&gt,
+   "<a href='#m_key'>key</a>": &ltString&gt,
+   "<a href='#m_state'>state</a>": &ltString&gt,
+   "<a href='#m_DeviceSync'>DeviceSync</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraDeviceSync.html'>SraDeviceSync</a>,
+   "<a href='#m_Error'>Error</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraError.html'>SraError</a>,
+   "<a href='#m_Identity'>Identity</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraDeviceIdentity.html'>SraDeviceIdentity</a>,
+   "<a href='#m_Name'>Name</a>": &ltString&gt,
+   "<a href='#m_RecoveryPoint'>RecoveryPoint</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraRecoveryPoint.html'>SraRecoveryPoint</a>,
+   "<a href='#m_Snapshot'>Snapshot</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraSnapshot.html'>SraSnapshot</a>,
+   "<a href='#m_Success'>Success</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraSuccess.html'>SraSuccess</a>,
+   "<a href='#m_warning'>warning</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraError.html'>SraError</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_DeviceSync'>DeviceSync</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraDeviceSync.html'>SraDeviceSync</a></td><td></td></tr><tr><td id='m_Error'>Error</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraError.html'>SraError</a></td><td></td></tr><tr><td id='m_Identity'>Identity</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraDeviceIdentity.html'>SraDeviceIdentity</a></td><td>Identify of the device.</td></tr><tr><td id='m_Name'>Name</td><td>xsd:string</td><td>Name of the device. This is the service group name
+ in VMstore context.</td></tr><tr><td id='m_RecoveryPoint'>RecoveryPoint</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraRecoveryPoint.html'>SraRecoveryPoint</a></td><td></td></tr><tr><td id='m_Snapshot'>Snapshot</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraSnapshot.html'>SraSnapshot</a></td><td></td></tr><tr><td id='m_Success'>Success</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraSuccess.html'>SraSuccess</a></td><td></td></tr><tr><td id='m_warning'>warning</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/recovery/SraError.html'>SraError</a></td><td></td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_id'>id</td><td>xsd:string</td><td>Retrieves ID of the device</td></tr><tr><td id='m_key'>key</td><td>xsd:string</td><td>Retrieves SRM "key" of the device. A key is different from
+ ID in that it is a value used to identify target devices during
+ test and recovery.</td></tr><tr><td id='m_state'>state</td><td>xsd:string</td><td>State of the device.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

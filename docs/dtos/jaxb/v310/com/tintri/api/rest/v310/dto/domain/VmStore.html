@@ -1,0 +1,40 @@
+<HTML><HEAD><TITLE>XML element VmStore</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VmStore</h2>Defines VMstore settings on Tintri Global Center.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.VmStore",
+   "<a href='#m_applianceId'>applianceId</a>": &ltString&gt,
+   "<a href='#m_datastoreId'>datastoreId</a>": &ltString&gt,
+   "<a href='#m_hostname'>hostname</a>": &ltString&gt,
+   "<a href='#m_includeInCluster'>includeInCluster</a>": &ltBoolean&gt,
+   "<a href='#m_ipAddress'>ipAddress</a>": &ltString&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_localAlias'>localAlias</a>": &ltString&gt,
+   "<a href='#m_applianceInfo'>applianceInfo</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceInfo.html'>ApplianceInfo</a>,
+   "<a href='#m_credentials'>credentials</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/VmStoreCredentials.html'>VmStoreCredentials</a>,
+   "<a href='#m_sessionStatusInfo'>sessionStatusInfo</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/VmstoreSessionStatusInfo.html'>VmstoreSessionStatusInfo</a>,
+   "<a href='#m_uuid'>uuid</a>": <a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+   "<a href='#m_vmstorePoolId'>vmstorePoolId</a>": &ltString&gt,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_applianceInfo'>applianceInfo</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceInfo.html'>ApplianceInfo</a></td><td>The VMStore appliance information.</td></tr><tr><td id='m_credentials'>credentials</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/VmStoreCredentials.html'>VmStoreCredentials</a></td><td>The VMstore session login credentials in the clear,
+ which is why it not returned and not documented..</td></tr><tr><td id='m_sessionStatusInfo'>sessionStatusInfo</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/VmstoreSessionStatusInfo.html'>VmstoreSessionStatusInfo</a></td><td>The VMStore session status information.</td></tr><tr><td id='m_uuid'>uuid</td><td><a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Unique Tintri UUID for the object</td></tr><tr><td id='m_vmstorePoolId'>vmstorePoolId</td><td>xsd:string</td><td>The VMstore pool ID this VMstore is assigned to.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_applianceId'>applianceId</td><td>xsd:string</td><td>The VMStore appliance ID.</td></tr><tr><td id='m_datastoreId'>datastoreId</td><td>xsd:list[xsd:string]</td><td>A list of VMStore's datastore IDs.</td></tr><tr><td id='m_hostname'>hostname</td><td>xsd:string</td><td>The VMStore host name.</td></tr><tr><td id='m_includeInCluster'>includeInCluster</td><td>xsd:boolean</td><td>Indicates whether this VMstore is being managed by the Tintri Global Center.
+ 'True' indicates Tintri Global Center management.</td></tr><tr><td id='m_ipAddress'>ipAddress</td><td>xsd:string</td><td>The VMStore IP Address.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz</td></tr><tr><td id='m_localAlias'>localAlias</td><td>xsd:string</td><td>Alias used for the entity instance in this Tintri API server.
+ If an alias is not set, then localAlias is not returned.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

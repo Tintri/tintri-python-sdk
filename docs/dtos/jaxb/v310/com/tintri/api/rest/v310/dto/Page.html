@@ -1,0 +1,53 @@
+<HTML><HEAD><TITLE>XML element Page</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: Page</h2>Models a list of items which make a page for API client. It includes list of 'typedBean' items,
+ number of total pages in the query request, current page number and some additional metadata like time needed to
+ complete the request and last update time.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.Page",
+   "<a href='#m_absoluteTotal'>absoluteTotal</a>": &ltNumber&gt,
+   "<a href='#m_completedIn'>completedIn</a>": &ltNumber&gt,
+   "<a href='#m_filteredTotal'>filteredTotal</a>": &ltNumber&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_limit'>limit</a>": &ltNumber&gt,
+   "<a href='#m_next'>next</a>": &ltString&gt,
+   "<a href='#m_offset'>offset</a>": &ltNumber&gt,
+   "<a href='#m_offsetMatchFound'>offsetMatchFound</a>": &ltBoolean&gt,
+   "<a href='#m_overflow'>overflow</a>": &ltBoolean&gt,
+   "<a href='#m_page'>page</a>": &ltNumber&gt,
+   "<a href='#m_pageTotal'>pageTotal</a>": &ltNumber&gt,
+   "<a href='#m_prev'>prev</a>": &ltString&gt,
+   "<a href='#m_total'>total</a>": &ltNumber&gt,
+   "<a href='#m_typedBean'>items</a>": [?],
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_typedBean'>typedBean (wrapped by items)</td><td>xsd:list[?]</td><td>List of outgoing items</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_absoluteTotal'>absoluteTotal</td><td>xsd:long</td><td>The absolute number of requested objects without any qualifications including filtering, active, or deleted.</td></tr><tr><td id='m_completedIn'>completedIn</td><td>xsd:long</td><td>Time in milliseconds indicating how long it took to serve the request</td></tr><tr><td id='m_filteredTotal'>filteredTotal</td><td>xsd:long</td><td>The number of objects as specified by the filter.  If no filter was requested, it would be same as total.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The time when the page was accesed.</td></tr><tr><td id='m_limit'>limit</td><td>xsd:int</td><td>The client requested limit for the number of items in a page. Default is 2000.</td></tr><tr><td id='m_next'>next</td><td>xsd:string</td><td>The URL query string to fetch the next page.</td></tr><tr><td id='m_offset'>offset</td><td>xsd:int</td><td>The client requested index of an item in the page.
+ 
+ Offset could be provided as follows
+ 
+ offset=<int>
+ offset=name:<item-name>
+ offset=position:<int></td></tr><tr><td id='m_offsetMatchFound'>offsetMatchFound</td><td>xsd:boolean</td><td>Indicates if the requested item/(s) is/are found.
+ <pre>
+ For example, in case of GET VM call offset could be provided as "offset=name:<vm-name>"; 
+ OffsetMatchFound will be 
+  'True' if requested VM(s) is found, 
+  'False' otherwise
+ </pre></td></tr><tr><td id='m_overflow'>overflow</td><td>xsd:boolean</td><td>A flag giving notice the amount of data did not fit into the given specified or default offset.</td></tr><tr><td id='m_page'>page</td><td>xsd:int</td><td>The current page number.</td></tr><tr><td id='m_pageTotal'>pageTotal</td><td>xsd:int</td><td>The total number of pages available.</td></tr><tr><td id='m_prev'>prev</td><td>xsd:string</td><td>The URL query string to fetch the previous page.</td></tr><tr><td id='m_total'>total</td><td>xsd:long</td><td>The number of active objects.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

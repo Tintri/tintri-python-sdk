@@ -1,0 +1,31 @@
+<HTML><HEAD><TITLE>XML element ApplianceDisk</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: ApplianceDisk</h2>Hardware information about physical disks attached to the Tintri Appliance.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.hardware.ApplianceDisk",
+   "<a href='#m_description'>description</a>": &ltString&gt,
+   "<a href='#m_diskType'>diskType</a>": 'DISK_TYPE_NONE' | 'DISK_TYPE_HDD' | 'DISK_TYPE_SSD',
+   "<a href='#m_locator'>locator</a>": &ltString&gt,
+   "<a href='#m_rebuildPercent'>rebuildPercent</a>": &ltNumber&gt,
+   "<a href='#m_rebuildRemainingSeconds'>rebuildRemainingSeconds</a>": &ltNumber&gt,
+   "<a href='#m_state'>state</a>": 'DISK_STATE_NONE' | 'DISK_STATE_ACTIVE' | 'DISK_STATE_FAILED' | 'DISK_STATE_MISPLACED' | 'DISK_STATE_REBUILD' | 'DISK_STATE_SPARE' | 'DISK_STATE_REMOVED' | 'DISK_STATE_OFFLINE' | 'DISK_STATE_POWEROFF' | 'DISK_STATE_INVALID' | 'DISK_STATE_EMPTY',
+   "<a href='#m_status'>status</a>": &ltString&gt,
+   "<a href='#m_type'>type</a>": 'CPU' | 'MEMORY' | 'FAN' | 'POWER_SUPPLY' | 'MISC' | 'DOM' | 'TEMPERATURE' | 'IO_CARD' | 'VOLTAGE' | 'CABLE' | 'SENSOR_CURRENT' | 'SAS_PORT' | 'CONTROLLER' | 'DISK',
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_description'>description</td><td>xsd:string</td><td>Hardware component description</td></tr><tr><td id='m_diskType'>diskType</td><td>DISK_TYPE_NONE | DISK_TYPE_HDD | DISK_TYPE_SSD</td><td>Disk type.<table class='info'><tr><td>DISK_TYPE_NONE</td><td>Unknown disk type</td></tr><tr><td>DISK_TYPE_HDD</td><td>Hard disk type</td></tr><tr><td>DISK_TYPE_SSD</td><td>Flash memory disk type</td></tr></table></td></tr><tr><td id='m_locator'>locator</td><td>xsd:string</td><td>Internal ID to locate this hardware component.</td></tr><tr><td id='m_rebuildPercent'>rebuildPercent</td><td>xsd:int</td><td>Disk rebuild progress percentage.</td></tr><tr><td id='m_rebuildRemainingSeconds'>rebuildRemainingSeconds</td><td>xsd:long</td><td>Number of seconds left for rebuild.</td></tr><tr><td id='m_state'>state</td><td>DISK_STATE_NONE | DISK_STATE_ACTIVE | DISK_STATE_FAILED | DISK_STATE_MISPLACED | DISK_STATE_REBUILD | DISK_STATE_SPARE | DISK_STATE_REMOVED | DISK_STATE_OFFLINE | DISK_STATE_POWEROFF | DISK_STATE_INVALID | DISK_STATE_EMPTY</td><td>Disk state.<table class='info'><tr><td>DISK_STATE_NONE</td><td>Unknown disk state</td></tr><tr><td>DISK_STATE_ACTIVE</td><td>Disk is active and serving data</td></tr><tr><td>DISK_STATE_FAILED</td><td>Disk has failed</td></tr><tr><td>DISK_STATE_MISPLACED</td><td>Disk was misplaced and can't be found</td></tr><tr><td>DISK_STATE_REBUILD</td><td>Disk is rebuilding</td></tr><tr><td>DISK_STATE_SPARE</td><td>Disk is a spare</td></tr><tr><td>DISK_STATE_REMOVED</td><td>Disk was removed</td></tr><tr><td>DISK_STATE_OFFLINE</td><td>Disk is offline</td></tr><tr><td>DISK_STATE_POWEROFF</td><td>Disk is powered off</td></tr><tr><td>DISK_STATE_INVALID</td><td>Disk is invalid</td></tr><tr><td>DISK_STATE_EMPTY</td><td>Disk is empty</td></tr></table></td></tr><tr><td id='m_status'>status</td><td>xsd:string</td><td>Hardware status description.</td></tr><tr><td id='m_type'>type</td><td>CPU | MEMORY | FAN | POWER_SUPPLY | MISC | DOM | TEMPERATURE | IO_CARD | VOLTAGE | CABLE | SENSOR_CURRENT | SAS_PORT | CONTROLLER | DISK</td><td>Hardware type.<table class='info'><tr><td>CPU</td><td>CPU component</td></tr><tr><td>MEMORY</td><td>Memory component</td></tr><tr><td>FAN</td><td>Fan component</td></tr><tr><td>POWER_SUPPLY</td><td>Power supply component</td></tr><tr><td>MISC</td><td>Miscellaneous component</td></tr><tr><td>DOM</td><td>Device on Motherboard component</td></tr><tr><td>TEMPERATURE</td><td>Temperature sensor component</td></tr><tr><td>IO_CARD</td><td>I/O card component</td></tr><tr><td>VOLTAGE</td><td>Voltage sensor component</td></tr><tr><td>CABLE</td><td>Cable component</td></tr><tr><td>SENSOR_CURRENT</td><td>Current sensor component</td></tr><tr><td>SAS_PORT</td><td>Serial Attached SCSI port component</td></tr><tr><td>CONTROLLER</td><td>Controller component</td></tr><tr><td>DISK</td><td>Disk component</td></tr></table></td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

@@ -1,0 +1,33 @@
+<HTML><HEAD><TITLE>XML element DatastoreReplicationInfo</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: DatastoreReplicationInfo</h2>Replication settings for the datastore.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.DatastoreReplicationInfo",
+   "<a href='#m_acceptIncomingTraffic'>acceptIncomingTraffic</a>": &ltBoolean&gt,
+   "<a href='#m_allowOutgoingTraffic'>allowOutgoingTraffic</a>": &ltBoolean&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_passphrase'>passphrase</a>": &ltString&gt,
+   "<a href='#m_port'>port</a>": &ltNumber&gt,
+   "<a href='#m_syncReplPort'>syncReplPort</a>": &ltNumber&gt,
+   "<a href='#m_pathIncoming'>pathsIncoming</a>": [<a href='../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html'>DatastoreReplicationPath</a>],
+   "<a href='#m_pathOutgoing'>pathsOutgoing</a>": [<a href='../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html'>DatastoreReplicationPath</a>],
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_pathIncoming'>pathIncoming (wrapped by pathsIncoming)</td><td>xsd:list[<a href='../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html'>DatastoreReplicationPath</a>]</td><td>List of incoming replication paths for this datastore.</td></tr><tr><td id='m_pathOutgoing'>pathOutgoing (wrapped by pathsOutgoing)</td><td>xsd:list[<a href='../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html'>DatastoreReplicationPath</a>]</td><td>List of outgoing replication paths for this datastore.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_acceptIncomingTraffic'>acceptIncomingTraffic</td><td>xsd:boolean</td><td>When this datastore acts as the destination of a replication, the flag indicates whether the incoming traffic is accepted or not. When set to false, all replications coming into this target are stopped. When set to true, all replications coming into this target will resume.</td></tr><tr><td id='m_allowOutgoingTraffic'>allowOutgoingTraffic</td><td>xsd:boolean</td><td>When this datastore acts as the source of a replication configuration this flag indicates whether replication is enabled or not. When set to false, all replications originating from this source are stopped. When set to true, all replications originating from this source will resume.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated.</td></tr><tr><td id='m_passphrase'>passphrase</td><td>xsd:string</td><td>Authorization key of this datastore which will be used to validate when another datastore attempts to setup replication with this datastore as the destination.</td></tr><tr><td id='m_port'>port</td><td>xsd:int</td><td>Local listening port of the replication destination which is a 16-bit unsigned integer ranging from 1 to 65535</td></tr><tr><td id='m_syncReplPort'>syncReplPort</td><td>xsd:int</td><td>Local port used for synchronous replication purpose.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

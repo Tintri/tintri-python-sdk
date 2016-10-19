@@ -1,0 +1,136 @@
+<HTML><HEAD><TITLE>XML element VirtualMachineCloneSpec</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VirtualMachineCloneSpec</h2>This class is used as an input to the clone API. By populating different
+ combinations of attributes, various clone use cases could be explored.  
+ <br>
+ <b>Sample inputs:</b>
+ 
+ <ol>
+ <li>Clone From VM <br>
+ <pre>
+ {@code
+  {
+  "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
+  "vmId":"C218198C-9CE4-E5FD-00B3-EE96D2B3270F-VIM-0000000000000056",
+  "snapshotId":null,
+  "consistency":"CRASH_CONSISTENT",
+  "count":1,
+  "remoteCopyInfo":null,
+  "restoreInfo":null,
+  "rhev":null,
+  "vmware":{
+     "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$VMwareCloneInfo",
+     "cloneVmName":"new-clone-from-vm",
+     "vCenterName":VCENTER-HOSTNAME,
+     "datastoreName":DATASTORE-NAME,
+     "folderMorefValue":null,
+     "hostClusterMoref":HOSTRESOURCE-ID,
+     "customizationScript":null
+     }
+  }
+ }
+ </pre>
+ </li>
+ 
+ <li>Clone From Snapshot <br>
+ <pre>
+ {@code
+  {
+  "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
+  "vmId":null,
+   "snapshotId":"C218198C-9CE4-E5FD-00B3-EE96D2B3270F-SST-0000000000000001",
+   "consistency":"CRASH_CONSISTENT",
+   "count":1,
+   "remoteCopyInfo":null,
+   "restoreInfo":null,
+   "rhev":null,
+   "vmware":{
+      "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$VMwareCloneInfo",
+      "cloneVmName":"new-clone-from-snapshot",
+      "vCenterName":VCENTER-HOSTNAME,
+      "datastoreName":DATASTORE-NAME,
+      "folderMorefValue":null,
+      "hostClusterMoref":<HOSTRESOURCE-ID>,
+      "customizationScript":null
+      }
+  }
+ }
+ </pre>
+ </li>
+ 
+ <li>Remote copy clone <br>
+ <pre>
+ {@code
+  {
+  "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
+  "vmId":null,
+  "snapshotId":"C218198C-9CE4-E5FD-00B3-EE96D2B3270F-SST-0000000000000001",
+  "consistency":null,
+  "remoteCopyInfo":{
+     "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$RemoteCopyInfo",
+     "replicationPathId":"d3b57854-b241-4378-8afc-598a3dd5017e",
+     "directoryName":"destinationOfShotCopy"
+     },
+  "restoreInfo":null,
+  "rhev":null,
+  "vmware":null
+  }
+ }
+ </pre>
+ </li>
+ 
+ <li>MiniDR <br>
+ <pre>
+ {@code
+  {
+  "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
+  "vmId":null,
+  "snapshotId":"C218198C-9CE4-E5FD-00B3-EE96D2B3270F-SST-0000000000000001",
+  "consistency":null,
+  "restoreInfo":{
+     "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$RestoreInfo",
+     "directoryName":"destinationOfShotCopy"
+     },
+  "rhev":null,
+  "vmware":null
+  }
+ }
+ </pre>
+ </li>
+ </ol><table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
+   "<a href='#m_consistency'>consistency</a>": 'CRASH_CONSISTENT' | 'VM_CONSISTENT' | 'APP_CONSISTENT',
+   "<a href='#m_count'>count</a>": &ltNumber&gt,
+   "<a href='#m_snapshotId'>snapshotId</a>": &ltString&gt,
+   "<a href='#m_vmId'>vmId</a>": &ltString&gt,
+   "<a href='#m_hyperv'>hyperv</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.HyperVCloneInfo.html'>HyperVCloneInfo</a>,
+   "<a href='#m_remoteCopyInfo'>remoteCopyInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RemoteCopyInfo.html'>RemoteCopyInfo</a>,
+   "<a href='#m_restoreInfo'>restoreInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RestoreInfo.html'>RestoreInfo</a>,
+   "<a href='#m_rhev'>rhev</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RhevCloneInfo.html'>RhevCloneInfo</a>,
+   "<a href='#m_vmware'>vmware</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.VMwareCloneInfo.html'>VMwareCloneInfo</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_hyperv'>hyperv</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.HyperVCloneInfo.html'>HyperVCloneInfo</a></td><td>Hyper-V specific information if the clone operation involves Hyper-V VMs</td></tr><tr><td id='m_remoteCopyInfo'>remoteCopyInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RemoteCopyInfo.html'>RemoteCopyInfo</a></td><td>Contains information needed for remote copy operation. Populate remoteCopyInfo object along with snapshotId.</td></tr><tr><td id='m_restoreInfo'>restoreInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RestoreInfo.html'>RestoreInfo</a></td><td>Contains information needed for restore operation. Populated restoreInfo object along with snapshotId. Clone API with restoreInfo option is called on the destination
+ of the clone. SnapshotId should be a UUID of replica. (replicated Snapshot)</td></tr><tr><td id='m_rhev'>rhev</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RhevCloneInfo.html'>RhevCloneInfo</a></td><td>RHEV specific information if the clone operation involves RHEV VMs</td></tr><tr><td id='m_vmware'>vmware</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.VMwareCloneInfo.html'>VMwareCloneInfo</a></td><td>VMware specific information if the clone operation involves VMware VMs</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_consistency'>consistency</td><td>CRASH_CONSISTENT | VM_CONSISTENT | APP_CONSISTENT</td><td>The consistency of the snapshot used by the clone API in case of clone from VM.
+ SnapshotConsistency has 3 options. VM_CONSISTENT, CRASH_CONSISTENT or APP_CONSISTENT.<table class='info'><tr><td>CRASH_CONSISTENT</td><td>Disk activity quiesed snapshot</td></tr><tr><td>VM_CONSISTENT</td><td>VM activity  quiesed snapshot</td></tr><tr><td>APP_CONSISTENT</td><td>Application activity quiesed snapshot (currently not used)</td></tr></table></td></tr><tr><td id='m_count'>count</td><td>xsd:int</td><td>Count represents number of cloned VMs to be created. Its value should be in the range of 1, 500.
+ Mandatory for 'clone from VM' and 'clone from snapshot' to local datastore. 
+ The value will always be considered is 1 for 'remote copy' and 'mini DR'.</td></tr><tr><td id='m_snapshotId'>snapshotId</td><td>xsd:string</td><td>Tintri Snapshot UUID. It is mandatory in case of 'clone from snapshot', 'remote copy (one shot
+ copy)' and 'mini DR'</td></tr><tr><td id='m_vmId'>vmId</td><td>xsd:string</td><td>Tintri VM UUID. It is mandatory for clone from VM. Optional otherwise.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

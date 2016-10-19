@@ -1,0 +1,57 @@
+<HTML><HEAD><TITLE>XML element Datastore</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: Datastore</h2>The class represents a logical partition of a Tintri applicance used to
+ store VMs and virtual disks.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.Datastore",
+   "<a href='#m_displayName'>displayName</a>": &ltString&gt,
+   "<a href='#m_isDataFromAppliance'>isDataFromAppliance</a>": &ltBoolean&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_localAlias'>localAlias</a>": &ltString&gt,
+   "<a href='#m_snapshotHighFrequencyVmsCount'>snapshotHighFrequencyVmsCount</a>": &ltNumber&gt,
+   "<a href='#m_snapshotHighFrequencyVmsMax'>snapshotHighFrequencyVmsMax</a>": &ltNumber&gt,
+   "<a href='#m_vaaiThickSupportDisabled'>vaaiThickSupportDisabled</a>": &ltString&gt,
+   "<a href='#m_applianceUuid'>applianceUuid</a>": <a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+   "<a href='#m_nfsAccesses'>nfsAccesses</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/nfsaccess/DatastoreNfsAccesses.html'>DatastoreNfsAccesses</a>,
+   "<a href='#m_qosInfo'>qosInfo</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/DatastoreQoSInfo.html'>DatastoreQoSInfo</a>,
+   "<a href='#m_replication'>replication</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/DatastoreReplicationInfo.html'>DatastoreReplicationInfo</a>,
+   "<a href='#m_snapshotSchedule'>snapshotSchedules</a>": [<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html'>VirtualMachineSnapshotSchedule</a>],
+   "<a href='#m_stat'>stat</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/DatastoreStat.html'>DatastoreStat</a>,
+   "<a href='#m_storageContainer'>storageContainers</a>": [<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/HypervisorDatastore.html'>HypervisorDatastore</a>],
+   "<a href='#m_uuid'>uuid</a>": <a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_applianceUuid'>applianceUuid</td><td><a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>The Tintri appliance UUID.</td></tr><tr><td id='m_nfsAccesses'>nfsAccesses</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/nfsaccess/DatastoreNfsAccesses.html'>DatastoreNfsAccesses</a></td><td>NFS control access. This is the information for the datastore
+ which contains a list of NFS access configurations allowing or blocking
+ client access to this VMstore and whether the NFS access control is
+ enabled or not.</td></tr><tr><td id='m_qosInfo'>qosInfo</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/DatastoreQoSInfo.html'>DatastoreQoSInfo</a></td><td></td></tr><tr><td id='m_replication'>replication</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/DatastoreReplicationInfo.html'>DatastoreReplicationInfo</a></td><td>The replication links from and to this datastore and other replication
+ related properties at datastore level.</td></tr><tr><td id='m_snapshotSchedule'>snapshotSchedule (wrapped by snapshotSchedules)</td><td>xsd:list[<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html'>VirtualMachineSnapshotSchedule</a>]</td><td>A list of of default Snapshot schedules.</td></tr><tr><td id='m_stat'>stat</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/DatastoreStat.html'>DatastoreStat</a></td><td>Latest performance data at datastore level. It is aggregated for all
+ VMs and artifacts on the datastore.</td></tr><tr><td id='m_storageContainer'>storageContainer (wrapped by storageContainers)</td><td>xsd:list[<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/HypervisorDatastore.html'>HypervisorDatastore</a>]</td><td>A list of storage container information contined within  the datastore.</td></tr><tr><td id='m_uuid'>uuid</td><td><a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Unique Tintri UUID for the object</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_displayName'>displayName</td><td>xsd:string</td><td>This name to be used to display in a UI.</td></tr><tr><td id='m_isDataFromAppliance'>isDataFromAppliance</td><td>xsd:boolean</td><td>Set to true if the current data in the datastore was fetched from the
+ appliance. If the appliance is not accessible set it to false to
+ indicate that the data contained in the datastore is from local system
+ management databases.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz</td></tr><tr><td id='m_localAlias'>localAlias</td><td>xsd:string</td><td>Alias used for the entity instance in this Tintri API server.
+ If an alias is not set, then localAlias is not returned.</td></tr><tr><td id='m_snapshotHighFrequencyVmsCount'>snapshotHighFrequencyVmsCount</td><td>xsd:int</td><td>Returns the current number of VMs using RPO (high frequency) snapshots</td></tr><tr><td id='m_snapshotHighFrequencyVmsMax'>snapshotHighFrequencyVmsMax</td><td>xsd:int</td><td>Returns the maximum number of VMs permitted to take high frequency snapshots.</td></tr><tr><td id='m_vaaiThickSupportDisabled'>vaaiThickSupportDisabled</td><td>xsd:string</td><td>Option to ensure the VMStore treats all new VMWare VAAI
+ provisioned VMs as Thin-provisioned. A "true" value indicates that VMStore file system
+ will always use thin provisioning to get maximum space savings.
+ But a "false" value indicates that the VMStore file system will use the VAAI setting provided
+ by the user during provisioning. 
+ If for some reason file system is not running or there was an error while communicating with the 
+ file system, then an "unknown" value will be set for this setting. This indicates that its values was
+ not known at the time a request to the file system was made.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

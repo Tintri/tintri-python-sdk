@@ -1,0 +1,69 @@
+<HTML><HEAD><TITLE>XML element VirtualMachineSyncSpec</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VirtualMachineSyncSpec</h2>Input to support SyncVm operations.
+ <p>
+ Sample request for synchronize a VM from a snapshot:
+ <code><pre>
+ {"type":"FULL_VM",
+  "targetVmTintriUuids":["05AA7A2B-0463-F458-2024-1522128E4E8D-VIM-0000000000000024"],
+  "snapshotTintriUuid":"05AA7A2B-0463-F458-2024-1522128E4E8D-SST-0000000000000003",
+  "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineSyncSpec"
+ }
+ </pre></code>
+ Sample for synchronize a disk of a VM from a disk in a snapshot:
+ <code><pre>
+ {"type":"VDISK",
+  "targetVmTintriUuids":["05AA7A2B-0463-F458-2024-1522128E4E8D-VIM-0000000000000024"],
+  "snapshotTintriUuid":"05AA7A2B-0463-F458-2024-1522128E4E8D-SST-0000000000000012",
+  "sourceDisks":["scsi0:1"],
+  "destDisks":["scsi0:1"],
+  "takeSnapshotSpec":{"takeSnapshot":true,
+  "localRetentionTimeInMinutes":1440,
+  "replicaRetentionTimeInMinutes":1440,
+  "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineSyncSpec"
+ }
+ 
+ </pre></code>
+ Sample request for Guest OS File restore of a snapshot to a VM:
+ <code><pre>
+ {"type":"FILE_RESTORE",
+  "targetVmTintriUuids":["4BB35F23-205D-9234-DCB0-3781D75BB987-VIM-00000000000000E3"],
+  "snapshotTintriUuid":"4BB35F23-205D-9234-DCB0-3781D75BB987-SST-0000000000000006",
+  "sourceDisks":[],
+  "destDisks":[],
+  "isAsync":true,
+  "vmConfig":{"isDiskAutoDetach":true,"diskAutoDetachInMinutes":2880,
+  "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineSyncVmConfig"},
+  "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineSyncSpec"}
+ </pre></code><table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineSyncSpec",
+   "<a href='#m_async'>async</a>": &ltBoolean&gt,
+   "<a href='#m_destDisks'>destDisks</a>": &ltString&gt,
+   "<a href='#m_snapshotTintriUuid'>snapshotTintriUuid</a>": &ltString&gt,
+   "<a href='#m_sourceDisks'>sourceDisks</a>": &ltString&gt,
+   "<a href='#m_targetVmTintriUuids'>targetVmTintriUuids</a>": &ltString&gt,
+   "<a href='#m_type'>type</a>": 'FULL_VM' | 'VDISK' | 'FILE_RESTORE',
+   "<a href='#m_takeSnapshotSpec'>takeSnapshotSpec</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSyncSpec.VirtualMachineSyncTakeSnapshotSpec.html'>VirtualMachineSyncTakeSnapshotSpec</a>,
+   "<a href='#m_vmConfig'>vmConfig</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSyncVmConfig.html'>VirtualMachineSyncVmConfig</a>,
+   "<a href='#m_vmwareSpec'>vmwareSpec</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSyncSpec.VirtualMachineVmwareSyncSpec.html'>VirtualMachineVmwareSyncSpec</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_takeSnapshotSpec'>takeSnapshotSpec</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSyncSpec.VirtualMachineSyncTakeSnapshotSpec.html'>VirtualMachineSyncTakeSnapshotSpec</a></td><td>Properties for SyncVm operation to take a snapshot. The object is optional.</td></tr><tr><td id='m_vmConfig'>vmConfig</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSyncVmConfig.html'>VirtualMachineSyncVmConfig</a></td><td>Properties for SyncVM operation to detach Guest OS File (File-Level) restored virtual disks.</td></tr><tr><td id='m_vmwareSpec'>vmwareSpec</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSyncSpec.VirtualMachineVmwareSyncSpec.html'>VirtualMachineVmwareSyncSpec</a></td><td>Properties to support the SyncVm operation with hypervisor when the snapshot is VM-Consistent.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_async'>async</td><td>xsd:boolean</td><td>Checks if the SyncVM is synchronous or asynchronous. Default value is asynchronous.</td></tr><tr><td id='m_destDisks'>destDisks</td><td>xsd:list[xsd:string]</td><td>Selected disks to be replaced on Virtual Machine.</td></tr><tr><td id='m_snapshotTintriUuid'>snapshotTintriUuid</td><td>xsd:string</td><td>Tintri Snapshot UUID.</td></tr><tr><td id='m_sourceDisks'>sourceDisks</td><td>xsd:list[xsd:string]</td><td>Selected disks from Snapshot.</td></tr><tr><td id='m_targetVmTintriUuids'>targetVmTintriUuids</td><td>xsd:list[xsd:string]</td><td>Tintri Virtual Machine UUID of selected target VMs.</td></tr><tr><td id='m_type'>type</td><td>FULL_VM | VDISK | FILE_RESTORE</td><td>Operation type for SyncVm.<table class='info'><tr><td>FULL_VM</td><td>Sync the full VM</td></tr><tr><td>VDISK</td><td>Sync the virtual disk</td></tr><tr><td>FILE_RESTORE</td><td>Restore a VM or virtual disk</td></tr></table></td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

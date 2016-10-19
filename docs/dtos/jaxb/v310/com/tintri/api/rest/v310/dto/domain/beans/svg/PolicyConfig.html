@@ -1,0 +1,36 @@
+<HTML><HEAD><TITLE>XML element PolicyConfig</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: PolicyConfig</h2>PolicyConfig defines the common protection policy that is shared by all VM's in the group.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.svg.PolicyConfig",
+   "<a href='#m_highFrequencySnapSchedSupported'>highFrequencySnapSchedSupported</a>": &ltBoolean&gt,
+   "<a href='#m_highFrequencySnapshotScheduleEnabled'>highFrequencySnapshotScheduleEnabled</a>": &ltBoolean&gt,
+   "<a href='#m_systemDefaultReplicationPolicy'>systemDefaultReplicationPolicy</a>": &ltBoolean&gt,
+   "<a href='#m_systemDefaultSnapshotSchedule'>systemDefaultSnapshotSchedule</a>": &ltBoolean&gt,
+   "<a href='#m_qosPolicy'>qosPolicy</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html'>VirtualMachineQoSConfig</a>,
+   "<a href='#m_replPolicies'>replPolicies</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/PolicyConfig.ReplicationPolicy.html'>ReplicationPolicy</a>],
+   "<a href='#m_replPolicy'>replPolicy</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/PolicyConfig.ReplicationPolicy.html'>ReplicationPolicy</a>,
+   "<a href='#m_snapshotSchedule'>snapshotSchedules</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html'>VirtualMachineSnapshotSchedule</a>],
+   "<a href='#m_syncReplConfig'>syncReplConfig</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/SyncReplConfig.html'>SyncReplConfig</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_qosPolicy'>qosPolicy</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html'>VirtualMachineQoSConfig</a></td><td>QoS policy associated with this config.</td></tr><tr><td id='m_replPolicies'>replPolicies</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/PolicyConfig.ReplicationPolicy.html'>ReplicationPolicy</a>]</td><td>List of replication policies</td></tr><tr><td id='m_replPolicy'>replPolicy</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/svg/PolicyConfig.ReplicationPolicy.html'>ReplicationPolicy</a></td><td><b>Deprecated</b> since v310.61. Please use
+ <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/svg/PolicyConfig.html#m_replPolicies",
+ "replPolicies"); </script></td></tr><tr><td id='m_snapshotSchedule'>snapshotSchedule (wrapped by snapshotSchedules)</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html'>VirtualMachineSnapshotSchedule</a>]</td><td>Returns a list of snapshot schedules</td></tr><tr><td id='m_syncReplConfig'>syncReplConfig</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/SyncReplConfig.html'>SyncReplConfig</a></td><td>Synchronous replication configuration associated with this policy.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_highFrequencySnapSchedSupported'>highFrequencySnapSchedSupported</td><td>xsd:boolean</td><td>True if high-frequency snapshot schedule is supported for this policy.</td></tr><tr><td id='m_highFrequencySnapshotScheduleEnabled'>highFrequencySnapshotScheduleEnabled</td><td>xsd:boolean</td><td>True if high-frequency snapshot schedule is enabled for this policy.</td></tr><tr><td id='m_systemDefaultReplicationPolicy'>systemDefaultReplicationPolicy</td><td>xsd:boolean</td><td></td></tr><tr><td id='m_systemDefaultSnapshotSchedule'>systemDefaultSnapshotSchedule</td><td>xsd:boolean</td><td>True if default system snapshot schedules is used.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

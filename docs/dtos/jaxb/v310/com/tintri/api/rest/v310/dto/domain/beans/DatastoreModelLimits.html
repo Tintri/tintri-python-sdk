@@ -1,0 +1,37 @@
+<HTML><HEAD><TITLE>XML element DatastoreModelLimits</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: DatastoreModelLimits</h2>Model constants for the appliance.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.DatastoreModelLimits",
+   "<a href='#m_flashSizeEvictionThresholdGiB'>flashSizeEvictionThresholdGiB</a>": &ltNumber&gt,
+   "<a href='#m_flashSizeGiB'>flashSizeGiB</a>": &ltNumber&gt,
+   "<a href='#m_operationsBackEndIopsMax'>operationsBackEndIopsMax</a>": &ltNumber&gt,
+   "<a href='#m_operationsNormalizedIopsMax'>operationsNormalizedIopsMax</a>": &ltNumber&gt,
+   "<a href='#m_supportsCompression'>supportsCompression</a>": &ltBoolean&gt,
+   "<a href='#m_supportsDedup'>supportsDedup</a>": &ltBoolean&gt,
+   "<a href='#m_truReadBytesWeight'>truReadBytesWeight</a>": &ltNumber&gt,
+   "<a href='#m_truReadIopsWeight'>truReadIopsWeight</a>": &ltNumber&gt,
+   "<a href='#m_truReplicationIncomingWeight'>truReplicationIncomingWeight</a>": &ltNumber&gt,
+   "<a href='#m_truReplicationOutgoingWeight'>truReplicationOutgoingWeight</a>": &ltNumber&gt,
+   "<a href='#m_truWriteBytesWeight'>truWriteBytesWeight</a>": &ltNumber&gt,
+   "<a href='#m_truWriteIopsWeight'>truWriteIopsWeight</a>": &ltNumber&gt,
+   "<a href='#m_vdisksSupportedMax'>vdisksSupportedMax</a>": &ltNumber&gt,
+   "<a href='#m_vmsSupportedMax'>vmsSupportedMax</a>": &ltNumber&gt,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_flashSizeEvictionThresholdGiB'>flashSizeEvictionThresholdGiB</td><td>xsd:double</td><td>The flash size threshold for block eviction in GiB.</td></tr><tr><td id='m_flashSizeGiB'>flashSizeGiB</td><td>xsd:double</td><td>The usable flash size of the appliance in GiB</td></tr><tr><td id='m_operationsBackEndIopsMax'>operationsBackEndIopsMax</td><td>xsd:int</td><td>The maximum normalized IOPs available from the disk subsystem (not the actual IOPs)</td></tr><tr><td id='m_operationsNormalizedIopsMax'>operationsNormalizedIopsMax</td><td>xsd:int</td><td>The maximum normalized IOPs available on the appliance (not the actual IOPs)</td></tr><tr><td id='m_supportsCompression'>supportsCompression</td><td>xsd:boolean</td><td>Is compression supported on the appliance</td></tr><tr><td id='m_supportsDedup'>supportsDedup</td><td>xsd:boolean</td><td>Is deduplication supported on the appliance</td></tr><tr><td id='m_truReadBytesWeight'>truReadBytesWeight</td><td>xsd:double</td><td>Tintri resource unit weight for read throughput.</td></tr><tr><td id='m_truReadIopsWeight'>truReadIopsWeight</td><td>xsd:double</td><td>Tintri resource unit weight for read IOPS.</td></tr><tr><td id='m_truReplicationIncomingWeight'>truReplicationIncomingWeight</td><td>xsd:double</td><td>Tintri resource unit weight for replication incoming traffic.</td></tr><tr><td id='m_truReplicationOutgoingWeight'>truReplicationOutgoingWeight</td><td>xsd:double</td><td>Tintri resource unit weight for replication outgoing traffic.</td></tr><tr><td id='m_truWriteBytesWeight'>truWriteBytesWeight</td><td>xsd:double</td><td>Tintri resource unit weight for write throughput.</td></tr><tr><td id='m_truWriteIopsWeight'>truWriteIopsWeight</td><td>xsd:double</td><td>Tintri resource unit weight for write IOPS.</td></tr><tr><td id='m_vdisksSupportedMax'>vdisksSupportedMax</td><td>xsd:int</td><td>The maximum number of vdisks supported on the appliance</td></tr><tr><td id='m_vmsSupportedMax'>vmsSupportedMax</td><td>xsd:int</td><td>The maximum number of VMs supported on the appliance</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

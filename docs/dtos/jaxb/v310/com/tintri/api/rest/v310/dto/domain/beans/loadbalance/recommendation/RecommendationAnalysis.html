@@ -1,0 +1,38 @@
+<HTML><HEAD><TITLE>XML element RecommendationAnalysis</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: RecommendationAnalysis</h2>Contains Recommendation analysis details of one VMstore. 
+ Analysis categories include: space, IOPS, and flash working set.
+ 
+ The information is populated by Tintri Global Center, which analyzes
+ the current data on VMstore and make a prediction of the state of the
+ VMstore in the next 7 days.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.loadbalance.recommendation.RecommendationAnalysis",
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_summary'>summary</a>": &ltString&gt,
+   "<a href='#m_vmStoreDisplayName'>vmStoreDisplayName</a>": &ltString&gt,
+   "<a href='#m_vmStoreId'>vmStoreId</a>": &ltString&gt,
+   "<a href='#m_vmStoreIsSelected'>vmStoreIsSelected</a>": &ltBoolean&gt,
+   "<a href='#m_flashInfo'>flashInfo</a>": <a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationFlashAnalysis.html'>RecommendationFlashAnalysis</a>,
+   "<a href='#m_iopsInfo'>iopsInfo</a>": <a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationIopsAnalysis.html'>RecommendationIopsAnalysis</a>,
+   "<a href='#m_spaceInfo'>spaceInfo</a>": <a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationSpaceAnalysis.html'>RecommendationSpaceAnalysis</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_flashInfo'>flashInfo</td><td><a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationFlashAnalysis.html'>RecommendationFlashAnalysis</a></td><td>Results from the Recommendation flash usage and hit rate analysis.</td></tr><tr><td id='m_iopsInfo'>iopsInfo</td><td><a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationIopsAnalysis.html'>RecommendationIopsAnalysis</a></td><td>Results from the Recommendation IOPS analysis.</td></tr><tr><td id='m_spaceInfo'>spaceInfo</td><td><a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationSpaceAnalysis.html'>RecommendationSpaceAnalysis</a></td><td>Results from the Recommendation space analysis.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the recommended analysis was updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz.</td></tr><tr><td id='m_summary'>summary</td><td>xsd:string</td><td>The recommended analysis summary.</td></tr><tr><td id='m_vmStoreDisplayName'>vmStoreDisplayName</td><td>xsd:string</td><td>VMstore display name which was analyzed.</td></tr><tr><td id='m_vmStoreId'>vmStoreId</td><td>xsd:string</td><td>VMstore Tintri UUID which was analyzed.</td></tr><tr><td id='m_vmStoreIsSelected'>vmStoreIsSelected</td><td>xsd:boolean</td><td>'True' indicates VMstore is included in the analysis. Default is 'true'.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

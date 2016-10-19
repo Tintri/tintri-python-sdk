@@ -1,0 +1,137 @@
+<HTML><HEAD><TITLE>XML element VmstorePoolStat</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VmstorePoolStat</h2>The VMstore pool statistics.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.perf.VmstorePoolStat",
+   "<a href='#m_cloneDedupeFactor'>cloneDedupeFactor</a>": &ltNumber&gt,
+   "<a href='#m_compressedSpaceUsedLive'>compressedSpaceUsedLive</a>": &ltNumber&gt,
+   "<a href='#m_compressedSpaceUsedSnapshotOnly'>compressedSpaceUsedSnapshotOnly</a>": &ltNumber&gt,
+   "<a href='#m_compressionFactor'>compressionFactor</a>": &ltNumber&gt,
+   "<a href='#m_dedupeFactor'>dedupeFactor</a>": &ltNumber&gt,
+   "<a href='#m_disksCount'>disksCount</a>": &ltNumber&gt,
+   "<a href='#m_flashHitPercent'>flashHitPercent</a>": &ltNumber&gt,
+   "<a href='#m_intervalSeconds'>intervalSeconds</a>": &ltNumber&gt,
+   "<a href='#m_ioAlignedPercent'>ioAlignedPercent</a>": &ltNumber&gt,
+   "<a href='#m_latencyContentionMs'>latencyContentionMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyDifferenceFromMaxInSetMs'>latencyDifferenceFromMaxInSetMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyDiskMs'>latencyDiskMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyFlashMs'>latencyFlashMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyHostMs'>latencyHostMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyIopsPercent'>latencyIopsPercent</a>": &ltNumber&gt,
+   "<a href='#m_latencyMirrorMs'>latencyMirrorMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyMirrorReadMs'>latencyMirrorReadMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyMirrorWriteMs'>latencyMirrorWriteMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyMirrorWriteNetworkMs'>latencyMirrorWriteNetworkMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyNetworkMs'>latencyNetworkMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyStorageMs'>latencyStorageMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyThrottleMs'>latencyThrottleMs</a>": &ltNumber&gt,
+   "<a href='#m_latencyTotalMs'>latencyTotalMs</a>": &ltNumber&gt,
+   "<a href='#m_logicalUniqueSpaceUsedGiB'>logicalUniqueSpaceUsedGiB</a>": &ltNumber&gt,
+   "<a href='#m_normalizedTotalIops'>normalizedTotalIops</a>": &ltNumber&gt,
+   "<a href='#m_operationsInWeekMaximumIops'>operationsInWeekMaximumIops</a>": &ltNumber&gt,
+   "<a href='#m_operationsInWeekMinimumIops'>operationsInWeekMinimumIops</a>": &ltNumber&gt,
+   "<a href='#m_operationsReadIops'>operationsReadIops</a>": &ltNumber&gt,
+   "<a href='#m_operationsTotalIops'>operationsTotalIops</a>": &ltNumber&gt,
+   "<a href='#m_operationsWriteIops'>operationsWriteIops</a>": &ltNumber&gt,
+   "<a href='#m_performanceReserveActual'>performanceReserveActual</a>": &ltNumber&gt,
+   "<a href='#m_performanceReserveAutoAllocated'>performanceReserveAutoAllocated</a>": &ltNumber&gt,
+   "<a href='#m_performanceReserveChange'>performanceReserveChange</a>": &ltNumber&gt,
+   "<a href='#m_performanceReserveChangePercent'>performanceReserveChangePercent</a>": &ltNumber&gt,
+   "<a href='#m_performanceReserveIfAutoAllocated'>performanceReserveIfAutoAllocated</a>": &ltNumber&gt,
+   "<a href='#m_performanceReserveIfPinned'>performanceReserveIfPinned</a>": &ltNumber&gt,
+   "<a href='#m_performanceReservePinned'>performanceReservePinned</a>": &ltNumber&gt,
+   "<a href='#m_performanceReserveRemaining'>performanceReserveRemaining</a>": &ltNumber&gt,
+   "<a href='#m_performanceReserveUsed'>performanceReserveUsed</a>": &ltNumber&gt,
+   "<a href='#m_spaceProvisionedGiB'>spaceProvisionedGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceProvisionedPercent'>spaceProvisionedPercent</a>": &ltNumber&gt,
+   "<a href='#m_spaceRemainingDays'>spaceRemainingDays</a>": &ltNumber&gt,
+   "<a href='#m_spaceRemainingPhysicalGiB'>spaceRemainingPhysicalGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceSavingsFactor'>spaceSavingsFactor</a>": &ltNumber&gt,
+   "<a href='#m_spaceTotalGiB'>spaceTotalGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedChangeGiB'>spaceUsedChangeGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedChangePercent'>spaceUsedChangePercent</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedChangePhysicalGiB'>spaceUsedChangePhysicalGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedDifferenceFromMaxInSetGiB'>spaceUsedDifferenceFromMaxInSetGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedDifferenceFromMaxInSetPhysicalGiB'>spaceUsedDifferenceFromMaxInSetPhysicalGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedGiB'>spaceUsedGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedLiveGiB'>spaceUsedLiveGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedLivePhysicalGiB'>spaceUsedLivePhysicalGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedMappedGiB'>spaceUsedMappedGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedOtherGiB'>spaceUsedOtherGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedOtherPhysicalGiB'>spaceUsedOtherPhysicalGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedPhysicalChangePercent'>spaceUsedPhysicalChangePercent</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedPhysicalGiB'>spaceUsedPhysicalGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedSnapshotsHypervisorGiB'>spaceUsedSnapshotsHypervisorGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedSnapshotsHypervisorPhysicalGiB'>spaceUsedSnapshotsHypervisorPhysicalGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedSnapshotsTintriGiB'>spaceUsedSnapshotsTintriGiB</a>": &ltNumber&gt,
+   "<a href='#m_spaceUsedSnapshotsTintriPhysicalGiB'>spaceUsedSnapshotsTintriPhysicalGiB</a>": &ltNumber&gt,
+   "<a href='#m_thickSpaceUsedGiB'>thickSpaceUsedGiB</a>": &ltNumber&gt,
+   "<a href='#m_thickSpaceUsedPercent'>thickSpaceUsedPercent</a>": &ltNumber&gt,
+   "<a href='#m_throughputCacheReadMBps'>throughputCacheReadMBps</a>": &ltNumber&gt,
+   "<a href='#m_throughputFlashMissMBps'>throughputFlashMissMBps</a>": &ltNumber&gt,
+   "<a href='#m_throughputInWeekMaximumMBps'>throughputInWeekMaximumMBps</a>": &ltNumber&gt,
+   "<a href='#m_throughputInWeekMinimumMBps'>throughputInWeekMinimumMBps</a>": &ltNumber&gt,
+   "<a href='#m_throughputReadMBps'>throughputReadMBps</a>": &ltNumber&gt,
+   "<a href='#m_throughputTotalMBps'>throughputTotalMBps</a>": &ltNumber&gt,
+   "<a href='#m_throughputWriteMBps'>throughputWriteMBps</a>": &ltNumber&gt,
+   "<a href='#m_timeEnd'>timeEnd</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_timeStart'>timeStart</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_totalSpaceSavingsIncludingThinProvisioningFactor'>totalSpaceSavingsIncludingThinProvisioningFactor</a>": &ltNumber&gt,
+   "<a href='#m_vmsCount'>vmsCount</a>": &ltNumber&gt,
+   "<a href='#m_liveLogicalFootprint'>liveLogicalFootprint</a>": &ltNumber&gt,
+   "<a href='#m_migration'>migration</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/MigrationStat.html'>MigrationStat</a>,
+   "<a href='#m_replicationIncoming'>replicationIncoming</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/ReplicationStat.html'>ReplicationStat</a>,
+   "<a href='#m_replicationOutgoing'>replicationOutgoing</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/ReplicationStat.html'>ReplicationStat</a>,
+   "<a href='#m_requestSizeKiB'>requestSizeKiB</a>": &ltNumber&gt,
+   "<a href='#m_uuid'>uuid</a>": <a href='../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_liveLogicalFootprint'>liveLogicalFootprint</td><td>xsd:double</td><td></td></tr><tr><td id='m_migration'>migration</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/MigrationStat.html'>MigrationStat</a></td><td>Latest slice of aggregated migration performance values for the entire datastore. It is aggregated at datastore
+ level.</td></tr><tr><td id='m_replicationIncoming'>replicationIncoming</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/ReplicationStat.html'>ReplicationStat</a></td><td>Latest slice of aggregated incoming replication performance values for the entire datastore. It is aggregated at datastore level.</td></tr><tr><td id='m_replicationOutgoing'>replicationOutgoing</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/ReplicationStat.html'>ReplicationStat</a></td><td>Latest slice of aggregated outgoing replication performance values for the entire datastore. It is aggregated at datastore level.</td></tr><tr><td id='m_requestSizeKiB'>requestSizeKiB</td><td>xsd:double</td><td>helper
+ derive average request size from mbps and iops</td></tr><tr><td id='m_uuid'>uuid</td><td><a href='../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>UUID of the VM or VDisk to which this performance sample corresponds.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_cloneDedupeFactor'>cloneDedupeFactor</td><td>xsd:double</td><td>Measure of the space saved due to deduplication from Tintri clones.  
+ This is computed as a ratio of the logical footprint and the logical bytes written, 
+ before block deduplication (if applicable). A value of 1.0 means no savings due to clone deduplication. 
+ Higher values mean greater space savings. 
+ 
+ This field is being deprecated at the VM and vDisk levels. 
+ We recommend using the spaceSavingsFactor at the VM and vDisk levels instead.</td></tr><tr><td id='m_compressedSpaceUsedLive'>compressedSpaceUsedLive</td><td>xsd:double</td><td>Logical size of Live VM data (does not include snapshots) after compression. 
+ This attribute is not returned for the DatastoreStat since it is only available at the VM and vDisk levels.</td></tr><tr><td id='m_compressedSpaceUsedSnapshotOnly'>compressedSpaceUsedSnapshotOnly</td><td>xsd:double</td><td>Logical size of data captured only in snapshots of the VM, after compression.  
+ This attribute is not returned for the DatastoreStat since it is only available at the VM/vDisk level.</td></tr><tr><td id='m_compressionFactor'>compressionFactor</td><td>xsd:double</td><td>At the datastore level, this is a measure of the space saved due to compression, 
+ and is computed as a ratio of the logical bytes stored and the physical space used. 
+ At the VM and vDisk levels, this is a measure of the compressibility of the data written to the VM or vDisk, 
+ and is computed as a ratio of the logical written size and the compressed space used. 
+ A value of 1.0 means no savings due to compression. Higher values mean greater space savings.</td></tr><tr><td id='m_dedupeFactor'>dedupeFactor</td><td>xsd:double</td><td>Measure of the space saved due to block and clone deduplication. 
+ This is computed as a ratio of the logical footprint and the logical bytes stored, 
+ after deduplication has filtered out duplicate data. 
+ This attribute is only returned at the Datastore level. 
+ A value of 1.0 means no savings due to deduplication. 
+ Higher values mean greater space savings.</td></tr><tr><td id='m_disksCount'>disksCount</td><td>xsd:int</td><td>Total number of disks of all virtual machines provisioned on this datastore.</td></tr><tr><td id='m_flashHitPercent'>flashHitPercent</td><td>xsd:double</td><td>The percentage of all reads and writes that are satisfied by flash storage.</td></tr><tr><td id='m_intervalSeconds'>intervalSeconds</td><td>xsd:long</td><td>The interval between datapoints in seconds</td></tr><tr><td id='m_ioAlignedPercent'>ioAlignedPercent</td><td>xsd:double</td><td>Percentage of read and written bytes that is aligned.</td></tr><tr><td id='m_latencyContentionMs'>latencyContentionMs</td><td>xsd:double</td><td>The portion of overall latency contributed by QoS contention</td></tr><tr><td id='m_latencyDifferenceFromMaxInSetMs'>latencyDifferenceFromMaxInSetMs</td><td>xsd:double</td><td>The difference between the sum of the total vDisks or VMs max host or network latency and a single vDisk or VM</td></tr><tr><td id='m_latencyDiskMs'>latencyDiskMs</td><td>xsd:double</td><td>The portion of overall latency contributed by the hard disks in milliseconds.</td></tr><tr><td id='m_latencyFlashMs'>latencyFlashMs</td><td>xsd:double</td><td>The portion of overall latency contributed by QoS flash</td></tr><tr><td id='m_latencyHostMs'>latencyHostMs</td><td>xsd:double</td><td>The portion of overall latency contributed by from ESX hosts down to disks in milliseconds.</td></tr><tr><td id='m_latencyIopsPercent'>latencyIopsPercent</td><td>xsd:double</td><td>The percentage of total latency due to host and network latency.</td></tr><tr><td id='m_latencyMirrorMs'>latencyMirrorMs</td><td>xsd:double</td><td>The portion of latency (read and write) contributed by synchronous replication (transparent failover).</td></tr><tr><td id='m_latencyMirrorReadMs'>latencyMirrorReadMs</td><td>xsd:double</td><td>The portion of read latency contributed by synchronous replication (transparent failover).</td></tr><tr><td id='m_latencyMirrorWriteMs'>latencyMirrorWriteMs</td><td>xsd:double</td><td>The portion of write latency (including network) contributed by synchronous replication (transparent failover).</td></tr><tr><td id='m_latencyMirrorWriteNetworkMs'>latencyMirrorWriteNetworkMs</td><td>xsd:double</td><td>The portion of network latency contributed by synchronous replication (transparent failover).</td></tr><tr><td id='m_latencyNetworkMs'>latencyNetworkMs</td><td>xsd:double</td><td>The portion of overall latency contributed by from the network down to disks in milliseconds.</td></tr><tr><td id='m_latencyStorageMs'>latencyStorageMs</td><td>xsd:double</td><td>The portion of overall latency contributed by the Tintri storage in milliseconds. It includes latency of disks.</td></tr><tr><td id='m_latencyThrottleMs'>latencyThrottleMs</td><td>xsd:double</td><td>The portion of overall latency contributed by QoS throttling</td></tr><tr><td id='m_latencyTotalMs'>latencyTotalMs</td><td>xsd:double</td><td>The maximum host and network latency in milliseconds.</td></tr><tr><td id='m_logicalUniqueSpaceUsedGiB'>logicalUniqueSpaceUsedGiB</td><td>xsd:double</td><td>Logical unique space used by all of the VMs.</td></tr><tr><td id='m_normalizedTotalIops'>normalizedTotalIops</td><td>xsd:int</td><td>Normalized Read and Write IOPS total</td></tr><tr><td id='m_operationsInWeekMaximumIops'>operationsInWeekMaximumIops</td><td>xsd:int</td><td>The maximum IOPS in the last week.</td></tr><tr><td id='m_operationsInWeekMinimumIops'>operationsInWeekMinimumIops</td><td>xsd:int</td><td>The minimum IOPS in the last week.</td></tr><tr><td id='m_operationsReadIops'>operationsReadIops</td><td>xsd:int</td><td>Read operations per second.</td></tr><tr><td id='m_operationsTotalIops'>operationsTotalIops</td><td>xsd:long</td><td>Total IOPS on the datastore.</td></tr><tr><td id='m_operationsWriteIops'>operationsWriteIops</td><td>xsd:int</td><td>Write operations per second.</td></tr><tr><td id='m_performanceReserveActual'>performanceReserveActual</td><td>xsd:double</td><td>Performance reserve percent.</td></tr><tr><td id='m_performanceReserveAutoAllocated'>performanceReserveAutoAllocated</td><td>xsd:double</td><td>Performance reserve percentage for a disk or VM.</td></tr><tr><td id='m_performanceReserveChange'>performanceReserveChange</td><td>xsd:double</td><td>Percentage value of change over last 7 days.</td></tr><tr><td id='m_performanceReserveChangePercent'>performanceReserveChangePercent</td><td>xsd:double</td><td>Percentage value of change over last 7 days.</td></tr><tr><td id='m_performanceReserveIfAutoAllocated'>performanceReserveIfAutoAllocated</td><td>xsd:double</td><td>Performance reserve percentage for a disk or VM if it were auto allocated</td></tr><tr><td id='m_performanceReserveIfPinned'>performanceReserveIfPinned</td><td>xsd:double</td><td>Performance reserves for a disk or VM, if it were pinned.</td></tr><tr><td id='m_performanceReservePinned'>performanceReservePinned</td><td>xsd:double</td><td>Performance reserves for a disk or VM.</td></tr><tr><td id='m_performanceReserveRemaining'>performanceReserveRemaining</td><td>xsd:double</td><td>The percentage of performance reserves remaining. (100 - performanceReserveUsed)</td></tr><tr><td id='m_performanceReserveUsed'>performanceReserveUsed</td><td>xsd:double</td><td>The percentage of performance reserves used. (autoAllocatedPerfReservePercentage + pinnedPerfReservePercentage)</td></tr><tr><td id='m_spaceProvisionedGiB'>spaceProvisionedGiB</td><td>xsd:double</td><td>Logical space allocated on the datastore in GiB.</td></tr><tr><td id='m_spaceProvisionedPercent'>spaceProvisionedPercent</td><td>xsd:int</td><td>Datastore provisioned space percentage.</td></tr><tr><td id='m_spaceRemainingDays'>spaceRemainingDays</td><td>xsd:int</td><td>The estimated number of days until the datastore is full based on recent usage.</td></tr><tr><td id='m_spaceRemainingPhysicalGiB'>spaceRemainingPhysicalGiB</td><td>xsd:double</td><td>Total physical available minus physical used.</td></tr><tr><td id='m_spaceSavingsFactor'>spaceSavingsFactor</td><td>xsd:double</td><td>Measures the space saved due to all space savings techniques supported, excluding thin provisioning. 
+ At the VM and vDisk level, the space savings factor applies to the data written to the VM or vDisk. 
+ At the Datastore level, the space savings applies to the logical footprint of the datastore, 
+ which includes the data written to the datastore as well as the additional data accessible to clones 
+ due to clone deduplication.</td></tr><tr><td id='m_spaceTotalGiB'>spaceTotalGiB</td><td>xsd:double</td><td>The total space capacity of the datastore in GiB.</td></tr><tr><td id='m_spaceUsedChangeGiB'>spaceUsedChangeGiB</td><td>xsd:double</td><td>Live logical bytes minus the start data point live logical bytes in GiB. Change in total logial space usage in last 7 days.</td></tr><tr><td id='m_spaceUsedChangePercent'>spaceUsedChangePercent</td><td>xsd:double</td><td>Percentage of change of the logical space used on the datastore.</td></tr><tr><td id='m_spaceUsedChangePhysicalGiB'>spaceUsedChangePhysicalGiB</td><td>xsd:double</td><td>Live physical bytes minus the start data point live physical bytes in GiB. Change in total physical space usage in last 7 days.</td></tr><tr><td id='m_spaceUsedDifferenceFromMaxInSetGiB'>spaceUsedDifferenceFromMaxInSetGiB</td><td>xsd:double</td><td>The difference between this samples logical space used and the maximum space used in the set in GiB.</td></tr><tr><td id='m_spaceUsedDifferenceFromMaxInSetPhysicalGiB'>spaceUsedDifferenceFromMaxInSetPhysicalGiB</td><td>xsd:double</td><td>The difference between this samples physical space used and the max space used in the set in GiB.</td></tr><tr><td id='m_spaceUsedGiB'>spaceUsedGiB</td><td>xsd:double</td><td>The amount of logical space used on the datastore in GiB.</td></tr><tr><td id='m_spaceUsedLiveGiB'>spaceUsedLiveGiB</td><td>xsd:double</td><td>Logical space used for live VM data and hypervisor snapshots in GiB (does not include snapshot-only space). 
+ Includes vDisk files and swap files.</td></tr><tr><td id='m_spaceUsedLivePhysicalGiB'>spaceUsedLivePhysicalGiB</td><td>xsd:double</td><td>Physical (actual) space used by live VM data and hypervisor snapshots, after all space savings techniques are applied.</td></tr><tr><td id='m_spaceUsedMappedGiB'>spaceUsedMappedGiB</td><td>xsd:double</td><td>Logical footprint of the datastore. 
+ This is the logical size of all data accessible on the datastore, before any space savings techniques are applied.</td></tr><tr><td id='m_spaceUsedOtherGiB'>spaceUsedOtherGiB</td><td>xsd:double</td><td>The logical spaced used by other files.</td></tr><tr><td id='m_spaceUsedOtherPhysicalGiB'>spaceUsedOtherPhysicalGiB</td><td>xsd:double</td><td>The physical space used by other files in GiB.</td></tr><tr><td id='m_spaceUsedPhysicalChangePercent'>spaceUsedPhysicalChangePercent</td><td>xsd:double</td><td>Percentage of change of the physical space used on the datastore.</td></tr><tr><td id='m_spaceUsedPhysicalGiB'>spaceUsedPhysicalGiB</td><td>xsd:double</td><td>The amount of physical space used on the datastore in GiB.</td></tr><tr><td id='m_spaceUsedSnapshotsHypervisorGiB'>spaceUsedSnapshotsHypervisorGiB</td><td>xsd:double</td><td>Logical space used for hypervisor snapshots in GiB.</td></tr><tr><td id='m_spaceUsedSnapshotsHypervisorPhysicalGiB'>spaceUsedSnapshotsHypervisorPhysicalGiB</td><td>xsd:double</td><td>Physical space used for hypervisor snapshots in GiB.</td></tr><tr><td id='m_spaceUsedSnapshotsTintriGiB'>spaceUsedSnapshotsTintriGiB</td><td>xsd:double</td><td>Space used for Tintri Snapshots in GiB.</td></tr><tr><td id='m_spaceUsedSnapshotsTintriPhysicalGiB'>spaceUsedSnapshotsTintriPhysicalGiB</td><td>xsd:double</td><td>Actual space consumed by Tintri snapshots in GiB.</td></tr><tr><td id='m_thickSpaceUsedGiB'>thickSpaceUsedGiB</td><td>xsd:double</td><td>Total thick space used on the system
+ This is an indicator of how much space can user efficiently save, by
+ converting the thick space used VMs to thin.</td></tr><tr><td id='m_thickSpaceUsedPercent'>thickSpaceUsedPercent</td><td>xsd:double</td><td>Datastore thick space used percentage. This value represents the percentage of
+ the total physical space used in the system by Thick-provisioned VMs.</td></tr><tr><td id='m_throughputCacheReadMBps'>throughputCacheReadMBps</td><td>xsd:double</td><td>The cache read throughput that is satisfied by flash storage.</td></tr><tr><td id='m_throughputFlashMissMBps'>throughputFlashMissMBps</td><td>xsd:double</td><td>System wide flash miss rate based on throughput in MBps. (The amount of read traffic that goes to disk)</td></tr><tr><td id='m_throughputInWeekMaximumMBps'>throughputInWeekMaximumMBps</td><td>xsd:double</td><td>The maximum throughput in the last week.</td></tr><tr><td id='m_throughputInWeekMinimumMBps'>throughputInWeekMinimumMBps</td><td>xsd:double</td><td>The minimum throughput in the last week in MBps.</td></tr><tr><td id='m_throughputReadMBps'>throughputReadMBps</td><td>xsd:double</td><td>Bandwidth in MB per second for read operations.</td></tr><tr><td id='m_throughputTotalMBps'>throughputTotalMBps</td><td>xsd:double</td><td>Total throughput on the datastore  in MBps.</td></tr><tr><td id='m_throughputWriteMBps'>throughputWriteMBps</td><td>xsd:double</td><td>Bandwidth in MB per second for write operations.</td></tr><tr><td id='m_timeEnd'>timeEnd</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The end time of the interval.</td></tr><tr><td id='m_timeStart'>timeStart</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The start time of the interval.</td></tr><tr><td id='m_totalSpaceSavingsIncludingThinProvisioningFactor'>totalSpaceSavingsIncludingThinProvisioningFactor</td><td>xsd:double</td><td>Measures the space saved due to all space savings techniques supported including Thin Provisioning.
+ 
+ The formula is [ spaceProvisionedGiB - (spaceUsedLiveGiB + spaceUsedOtherGiB ) + spaceUsedMappedGiB] /
+ [spaceUsedLivePhysicalGiB + spaceUsedOtherPhysicalGiB + spaceUsedSnapshotsTintriPhysicalGiB]</td></tr><tr><td id='m_vmsCount'>vmsCount</td><td>xsd:int</td><td>Number of virtual machines provisioned on this datastore.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

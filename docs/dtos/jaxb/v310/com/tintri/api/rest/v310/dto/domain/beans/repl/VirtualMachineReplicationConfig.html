@@ -1,0 +1,58 @@
+<HTML><HEAD><TITLE>XML element VirtualMachineReplicationConfig</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VirtualMachineReplicationConfig</h2>Virtual machine replication configuration information including replication
+ statistics, replication path, and flags.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.VirtualMachineReplicationConfig",
+   "<a href='#m_alertThresholdMinutes'>alertThresholdMinutes</a>": &ltNumber&gt,
+   "<a href='#m_id'>id</a>": &ltNumber&gt,
+   "<a href='#m_isDisabled'>isDisabled</a>": &ltBoolean&gt,
+   "<a href='#m_isOneshot'>isOneshot</a>": &ltBoolean&gt,
+   "<a href='#m_isPaused'>isPaused</a>": &ltBoolean&gt,
+   "<a href='#m_isSource'>isSource</a>": &ltBoolean&gt,
+   "<a href='#m_isSystemDefault'>isSystemDefault</a>": &ltBoolean&gt,
+   "<a href='#m_latestReplicatedSnapshotTime'>latestReplicatedSnapshotTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_replicateParentsRequested'>replicateParentsRequested</a>": &ltBoolean&gt,
+   "<a href='#m_replicationState'>replicationState</a>": &ltString&gt,
+   "<a href='#m_sourceIpAddress'>sourceIpAddress</a>": &ltString&gt,
+   "<a href='#m_tgcServiceGroupDefault'>tgcServiceGroupDefault</a>": &ltBoolean&gt,
+   "<a href='#m_datastoreUuid'>datastoreUuid</a>": <a href='../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+   "<a href='#m_error'>error</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a>,
+   "<a href='#m_latestReplicatedSnapshot'>latestReplicatedSnapshot</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a>,
+   "<a href='#m_path'>path</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html'>DatastoreReplicationPath</a>,
+   "<a href='#m_stat'>stat</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/ReplicationStat.html'>ReplicationStat</a>,
+   "<a href='#m_vmUuid'>vmUuid</a>": <a href='../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_datastoreUuid'>datastoreUuid</td><td><a href='../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Tintri UUID of the datastore where this replication configuration is defined.</td></tr><tr><td id='m_error'>error</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a></td><td>Detailed 
+ <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/TintriError.html","TintriError");
+ </script>
+ for this replication configuration. This attribute will only appear if there is an error.</td></tr><tr><td id='m_latestReplicatedSnapshot'>latestReplicatedSnapshot</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a></td><td>The snapshot information that was last replicated for this replication configuration.</td></tr><tr><td id='m_path'>path</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html'>DatastoreReplicationPath</a></td><td>Get the replication link associated with this configuration.</td></tr><tr><td id='m_stat'>stat</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/ReplicationStat.html'>ReplicationStat</a></td><td>Last replication performance slice associated with this configuration.</td></tr><tr><td id='m_vmUuid'>vmUuid</td><td><a href='../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Tintri UUID of the VM to which this configuration may be associated. Note that this can be null.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_alertThresholdMinutes'>alertThresholdMinutes</td><td>xsd:int</td><td>The lag alert threshold, in minutes.</td></tr><tr><td id='m_id'>id</td><td>xsd:long</td><td>The replication configuration ID.</td></tr><tr><td id='m_isDisabled'>isDisabled</td><td>xsd:boolean</td><td>'True' indicates that the configuration is disabled (there would be no file system replication in this case).
+ 'False' indicates otherwise.</td></tr><tr><td id='m_isOneshot'>isOneshot</td><td>xsd:boolean</td><td>'True' indicates to configure a one time replication. 
+ 'False' indicates to configure regular replication.</td></tr><tr><td id='m_isPaused'>isPaused</td><td>xsd:boolean</td><td>'True' indicates that the link is paused and no data is transferring.
+ 'False' indicates the link is active and transferring data.</td></tr><tr><td id='m_isSource'>isSource</td><td>xsd:boolean</td><td>'True' indicates that this is source of the replication link.
+ 'False' indicates otherwise.</td></tr><tr><td id='m_isSystemDefault'>isSystemDefault</td><td>xsd:boolean</td><td>'True' indicates that the configuration was inherited from the system default.
+ 'False' indicates that the configuration was not inherited from the system default.</td></tr><tr><td id='m_latestReplicatedSnapshotTime'>latestReplicatedSnapshotTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The latest replicated snapshot time in milliseconds from Jan 1, 1970 for this replication configuration</td></tr><tr><td id='m_replicateParentsRequested'>replicateParentsRequested</td><td>xsd:boolean</td><td>For a Tintri clone, while configuring replication, user indicated interest to also replicate base VMs.
+ TGC 2.0 does not support this flag and will generate error code(ERR-API-3111) if this flag is set to be true when
+ updating replication configuration.</td></tr><tr><td id='m_replicationState'>replicationState</td><td>xsd:string</td><td>Current replication state for this replication configuration. 
+ Possible values are: PARTIALLY_RUNNING, INCOMING, NOT_CONFIGURED, UP_TO_DATE,
+ RUNNING, SCHEDULED, PAUSED, and EXCEEDS_RPO.</td></tr><tr><td id='m_sourceIpAddress'>sourceIpAddress</td><td>xsd:string</td><td>Source IP Address</td></tr><tr><td id='m_tgcServiceGroupDefault'>tgcServiceGroupDefault</td><td>xsd:boolean</td><td>Boolean value indicates if the requested Replication Configuration is Service Group default from TGC.
+  This helps distinguish between per VM level Replication Configuration changes and Service Group level default Replication Configuration changes.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

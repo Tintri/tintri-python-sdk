@@ -1,0 +1,35 @@
+<HTML><HEAD><TITLE>XML element RecommendationActionResult</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: RecommendationActionResult</h2>The result of performing the Recommened Action.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.loadbalance.recommendation.RecommendationActionResult",
+   "<a href='#m_completionTime'>completionTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_errorCategory'>errorCategory</a>": &ltString&gt,
+   "<a href='#m_errorDetail'>errorDetail</a>": &ltString&gt,
+   "<a href='#m_errorSummary'>errorSummary</a>": &ltString&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_progress'>progress</a>": &ltNumber&gt,
+   "<a href='#m_progressInfo'>progressInfo</a>": &ltString&gt,
+   "<a href='#m_startedTime'>startedTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_state'>state</a>": 'AVAILABLE' | 'PENDING' | 'RUNNING' | 'RUNNING_ERROR' | 'COMPLETED_OK' | 'COMPLETED_FAILED' | 'CANCELLED_PENDING' | 'COMPLETED_CANCELLED',
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_state'>state</td><td>AVAILABLE | PENDING | RUNNING | RUNNING_ERROR | COMPLETED_OK | COMPLETED_FAILED | CANCELLED_PENDING | COMPLETED_CANCELLED</td><td>The execution state.<table class='info'><tr><td>AVAILABLE</td><td>Recommendation is ready to be executed</td></tr><tr><td>PENDING</td><td>Recommendation is accepted by the user and ready to execute</td></tr><tr><td>RUNNING</td><td>Recommendation is being executed</td></tr><tr><td>RUNNING_ERROR</td><td>Recommendation has encountered an error due to setup or environment</td></tr><tr><td>COMPLETED_OK</td><td>Recommendation has finished and all operations were successful</td></tr><tr><td>COMPLETED_FAILED</td><td>Recommendation has finished with an error</td></tr><tr><td>CANCELLED_PENDING</td><td>Recommendation is in process of being canceled</td></tr><tr><td>COMPLETED_CANCELLED</td><td>Recommendation has been cancelled by user</td></tr></table></td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_completionTime'>completionTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The completion time of performing the recommended action in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz.</td></tr><tr><td id='m_errorCategory'>errorCategory</td><td>xsd:string</td><td>Error category.
+ Valid values are: "replication", "license", "hypervisor", "TGC", and "VMSTORE".</td></tr><tr><td id='m_errorDetail'>errorDetail</td><td>xsd:string</td><td>Detailed error information.  Available only if there is an error.</td></tr><tr><td id='m_errorSummary'>errorSummary</td><td>xsd:string</td><td>The error summary. Available only if there is an error.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The last time the recommended action result was updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz.</td></tr><tr><td id='m_progress'>progress</td><td>xsd:int</td><td>The progress of performing the recommendation action.</td></tr><tr><td id='m_progressInfo'>progressInfo</td><td>xsd:string</td><td>The progress information. Example: Moving a virtual machine.</td></tr><tr><td id='m_startedTime'>startedTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The start time of performing the recommended action in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

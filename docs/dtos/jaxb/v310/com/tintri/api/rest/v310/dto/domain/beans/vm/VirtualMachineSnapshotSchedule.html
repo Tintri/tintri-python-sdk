@@ -1,0 +1,145 @@
+<HTML><HEAD><TITLE>XML element VirtualMachineSnapshotSchedule</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VirtualMachineSnapshotSchedule</h2>Encapsulates the definition of a snapshot schedule. Moments in time
+ are represented in the cron format. There are five types of the
+ schedules which represent the frequency that the snapshot is taken
+ at the specified moments in time.  The five types are: hourly, daily,
+ weekly, monthly, and quarterly.
+
+ Only one snapshot schedule per snapshot schedule type can be set. If there
+ are no schedules set, then the default datastore snapshot schedule is used.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineSnapshotSchedule",
+   "<a href='#m_consistency'>consistency</a>": 'CRASH_CONSISTENT' | 'VM_CONSISTENT' | 'APP_CONSISTENT',
+   "<a href='#m_cronExpressions'>cronExpressions</a>": &ltString&gt,
+   "<a href='#m_initialDefaultCronExpression'>initialDefaultCronExpression</a>": &ltString&gt,
+   "<a href='#m_initialDefaultRetentionMinutes'>initialDefaultRetentionMinutes</a>": &ltNumber&gt,
+   "<a href='#m_isSystemDefaultSchedule'>isSystemDefaultSchedule</a>": &ltBoolean&gt,
+   "<a href='#m_name'>name</a>": &ltString&gt,
+   "<a href='#m_retentionDestinationMinutes'>retentionDestinationMinutes</a>": &ltNumber&gt,
+   "<a href='#m_retentionSourceMinutes'>retentionSourceMinutes</a>": &ltNumber&gt,
+   "<a href='#m_type'>type</a>": 'HOURLY' | 'DAILY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY',
+   "<a href='#m_version'>version</a>": &ltString&gt,
+   "<a href='#m_tgcServiceGroupDefault'>tgcServiceGroupDefault</a>": &ltBoolean&gt,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_tgcServiceGroupDefault'>tgcServiceGroupDefault</td><td>xsd:boolean</td><td>Boolean value indicates if the requested Snapshot Schedule is Service Group default from TGC.
+  This helps distinguish between per VM level Snapshot Schedule changes and Service Group level default Snapshot Schedule changes.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_consistency'>consistency</td><td>CRASH_CONSISTENT | VM_CONSISTENT | APP_CONSISTENT</td><td>The snapshot consistency type. Crash consistency is a VMstore snapshot that can
+ be used to recover from a VM crash.  VM consistency is a hypervisor snapshot that
+ is hypervisor consistent and can be used to recover from a VM crash. App
+ consistency is not used at this time.<table class='info'><tr><td>CRASH_CONSISTENT</td><td>Disk activity quiesed snapshot</td></tr><tr><td>VM_CONSISTENT</td><td>VM activity  quiesed snapshot</td></tr><tr><td>APP_CONSISTENT</td><td>Application activity quiesed snapshot (currently not used)</td></tr></table></td></tr><tr><td id='m_cronExpressions'>cronExpressions</td><td>xsd:list[xsd:string]</td><td>A list of 
+ <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/tutorial-lesson-06.html">quartz cron expressions</a>.
+ The format is:
+
+ <table>
+   <tr>
+     <th>Field Name</th>
+     <th>Mandatory</th>
+     <th>Allowed Values</th>
+     <th>Allowed Special Characters</th>
+   </tr>
+   <tr>
+     <td>Seconds</td>
+     <td>YES</td>
+     <td>0-59</td>
+     <td>, - * /</td>
+   </tr>
+   <tr>
+     <td>Minutes</td>
+     <td>YES</td>
+     <td>0-59</td>
+     <td>, - * /</td>
+   </tr>
+   <tr>
+     <td>Hours</td>
+     <td>YES</td>
+     <td>0-23</td>
+     <td>, - * /</td>
+   </tr>
+   <tr>
+     <td>Day of month</td>
+     <td>YES</td>
+     <td>1-31</td>
+     <td>, - * ? / L W</td>
+   </tr>
+   <tr>
+     <td>Month</td>
+     <td>YES</td>
+     <td>1-12 or JAN-DEC</td>
+     <td> , - * /</td>
+   </tr>
+   <tr>
+     <td>Day of week</td>
+     <td>YES</td>
+     <td>1-7 or SUN-SAT</td>
+     <td>, - * ? / L #</td>
+   </tr>
+   <tr>
+     <td>Year</td>
+     <td>NO</td>
+     <td>empty, 1970-2099</td>
+     <td>, - * /</td>
+   </tr>
+ </table>
+
+ Examples:
+ <ul>
+ <li>0 0 5 ? * sun-sat - every day at 5:00:00 am</li>
+ <li>0 42 3 ? * sat - every Saturday at 3:42:00 am</li>
+ </ul></td></tr><tr><td id='m_initialDefaultCronExpression'>initialDefaultCronExpression</td><td>xsd:string</td><td>Default cron expressions:
+
+ <table>
+   <tr>
+     <th>time</th>
+     <th>recurrence</th>
+     <th>retention</th>
+   </tr>
+   <tr>
+     <td>Hourly xx:05</td>
+     <td>every hour</td>
+     <td>Keep 3 hours</td>
+   </tr>
+   <tr>
+     <td>Daily 2:30am</td>
+     <td>everyday</td>
+     <td>Keep 2 days</td>
+   </tr>
+   <tr>
+     <td>Weekly 7:30am</td>
+     <td>Saturdays</td>
+     <td>Keep 8 days</td>
+   </tr>
+   <tr>
+     <td>Monthly 4:30am</td>
+     <td>first day</td>
+     <td>Keep 32 days</td>
+   </tr>
+   <tr>
+     <td>Quarterly 6:30am</td>
+     <td>first day</td>
+     <td>Keep 100 days</td>
+   </tr>
+ </table></td></tr><tr><td id='m_initialDefaultRetentionMinutes'>initialDefaultRetentionMinutes</td><td>xsd:int</td><td>The intial defautlt retention time in minutes.</td></tr><tr><td id='m_isSystemDefaultSchedule'>isSystemDefaultSchedule</td><td>xsd:boolean</td><td>Returns true if the schedule name matches any of the default schedule names.</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>User assigned name which by default schedule type. If there is already a schedule of that name, an auto-increment like 'Daily(2)' is performed. 
+ The user can overwrite the name by using the virtual machine snapshotSchedule API. The name is unique for a given VM.</td></tr><tr><td id='m_retentionDestinationMinutes'>retentionDestinationMinutes</td><td>xsd:int</td><td>The length of time in minutes the snapshot replica on the replication destination is to be retained.
+ This number is used to calculate replica snapshot
+ expiration value when the snapshot is sent from source to the destination.
+ On destination side, the snapshot stays until the expiration value.</td></tr><tr><td id='m_retentionSourceMinutes'>retentionSourceMinutes</td><td>xsd:int</td><td>How long, in minutes, a snapshot generated as per this schedule is to be retained.</td></tr><tr><td id='m_type'>type</td><td>HOURLY | DAILY | WEEKLY | MONTHLY | QUARTERLY</td><td>Schedule type to indicate whether it is hourly, daily, weekly, monthly or quarterly.<table class='info'><tr><td>HOURLY</td><td>Time points when snapshot is taken span over a period of one hour.</td></tr><tr><td>DAILY</td><td>Time points when snapshot is taken span over a period of one day
+ i.e. 24 hours.</td></tr><tr><td>WEEKLY</td><td>Time points when snapshot is taken span over a period of one week.</td></tr><tr><td>MONTHLY</td><td>Time points when snapshot is taken span over a period of one month.</td></tr><tr><td>QUARTERLY</td><td>Time points when snapshot is taken span over a period of one quarter
+ of a year.</td></tr></table></td></tr><tr><td id='m_version'>version</td><td>xsd:string</td><td>Snapshot schedule version</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

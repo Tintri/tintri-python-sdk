@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tutorial &mdash; Tintri Python SDK 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Tintri Python SDK 0.1 documentation" href="index.html" />
+    <link rel="next" title="Class Documentation" href="code.html" />
+    <link rel="prev" title="Tintri Python SDK Documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<p>The Tintri Python SDK (PySDK) is a library that provides a <em>Pythonic</em> way to access Tintri
+APIs.</p>
+<div class="section" id="installing">
+<h2>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h2>
+<p>Download the PySDK wheel from the Download tab on <a class="reference external" href="http://support.tintri.com">Tintri support</a>.
+Install the wheel using pip:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">tintri</span><span class="o">-</span><span class="mf">0.1</span><span class="o">-</span><span class="n">py2</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>There are two classes: a common Tintri Class and a v310 class. An example is below:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tintri.common</span> <span class="k">import</span> <span class="n">TintriServerError</span>
+<span class="kn">from</span> <span class="nn">tintri.v310</span> <span class="k">import</span> <span class="n">Tintri</span>
+<span class="kn">from</span> <span class="nn">tintri.v310</span> <span class="k">import</span> <span class="n">VirtualMachineFilterSpec</span>
+</pre></div>
+</div>
+<p>The common class contains the exceptions, the Tintri Base class, and the Tintri Page class; while
+the v310 class contains the v310 APIs and Data Transfer Objects (DTOs).  When an API uses a DTO,
+the API documentation links to their definitions.</p>
+<p>The PySDK supports both Tintri servers, VMstore and TGC.</p>
+<p>Code examples can be found on
+<a class="reference external" href="https://github.com/Tintri/tintri-pysdk-examples">Tintri&#8217;s GitHub site</a>.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Before any APIs can be called, the Tintri object must be instantiated:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tintri</span> <span class="o">=</span> <span class="n">Tintri</span><span class="p">(</span><span class="n">server_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Login has not occured yet, but the version and product information can be obtained:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">version_info</span> <span class="o">=</span> <span class="n">tintri</span><span class="o">.</span><span class="n">version</span>
+<span class="n">product_name</span> <span class="o">=</span> <span class="n">version_info</span><span class="o">.</span><span class="n">productName</span>
+<span class="nb">print</span> <span class="n">product_name</span> <span class="o">+</span> <span class="s2">&quot; with version: &quot;</span> <span class="o">+</span> <span class="n">version_info</span><span class="o">.</span><span class="n">preferredVersion</span>
+</pre></div>
+</div>
+<p>Tintri server login and logout are straight-forward:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tintri</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">user_name</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+
+<span class="n">tintri</span><span class="o">.</span><span class="n">logout</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Passwords are protected by using HTTPS.</p>
+<div class="section" id="exceptions">
+<h3>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h3>
+<p>There are many Tintri exceptions, however it it recommended to use <code class="docutils literal"><span class="pre">TintriServerError</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># instantiate the Tintri server.</span>
+    <span class="n">tintri</span> <span class="o">=</span> <span class="n">Tintri</span><span class="p">(</span><span class="n">server_name</span><span class="p">)</span>
+
+    <span class="c1"># Login to VMstore</span>
+    <span class="n">tintri</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">user_name</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="n">TintriServerError</span> <span class="k">as</span> <span class="n">tse</span><span class="p">:</span>
+    <span class="n">print_error</span><span class="p">(</span><span class="n">tse</span><span class="o">.</span><span class="n">__str__</span><span class="p">())</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="collecting-server-information">
+<h3>Collecting Server Information<a class="headerlink" href="#collecting-server-information" title="Permalink to this headline">¶</a></h3>
+<p>For classes like appliance, datastore, service groups, virtual disk, virtual machine, and vmstore,
+there are two getters, a single getter and a multiple getter.  For the multiple getter, pagination
+is taken care of by the PySDK in iteration. For example to obtain virtual machine information,
+there are two APIs methods <code class="docutils literal"><span class="pre">get_vm()</span></code> and <code class="docutils literal"><span class="pre">get_vms()</span></code>. A unique ID, <code class="docutils literal"><span class="pre">UUID</span></code> is required for
+<code class="docutils literal"><span class="pre">get_vm()</span></code>.  For <code class="docutils literal"><span class="pre">get_vms()</span></code>, a <code class="docutils literal"><span class="pre">VirtualMachineFilterSpec</span></code> can be used to filter VMs by
+name, aliveness, etc. An example that filters by name is below:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">vm_filter_spec</span> <span class="o">=</span> <span class="n">VirtualMachineFilterSpec</span><span class="p">()</span>
+<span class="n">vm_filter_spec</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">vm_name</span>
+
+<span class="n">vms</span> <span class="o">=</span> <span class="n">tintri</span><span class="o">.</span><span class="n">get_vms</span><span class="p">(</span><span class="n">filters</span> <span class="o">=</span> <span class="n">vm_filter_spec</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">vms</span><span class="o">.</span><span class="n">filteredTotal</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">print_error</span><span class="p">(</span><span class="s2">&quot;No VMs present&quot;</span><span class="p">)</span>
+    <span class="n">tintri</span><span class="o">.</span><span class="n">logout</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span> <span class="s2">&quot;Total: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">vms</span><span class="o">.</span><span class="n">filteredTotal</span><span class="p">)</span>
+
+<span class="c1"># Get more VM information until done.</span>
+<span class="k">for</span> <span class="n">vm</span> <span class="ow">in</span> <span class="n">vms</span><span class="p">:</span>
+    <span class="n">vm_name</span> <span class="o">=</span> <span class="n">vm</span><span class="o">.</span><span class="n">vmware</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">vm_uuid</span> <span class="o">=</span> <span class="n">vm</span><span class="o">.</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">vm_name</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">vm_uuid</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>For appliance, it is similar: <code class="docutils literal"><span class="pre">get_appliance()</span></code> and <code class="docutils literal"><span class="pre">get_appliances()</span></code>.</p>
+</div>
+<div class="section" id="creating-server-information">
+<h3>Creating Server Information<a class="headerlink" href="#creating-server-information" title="Permalink to this headline">¶</a></h3>
+<p>Creating objects are usually done with <code class="docutils literal"><span class="pre">create_</span></code> methods.  For example to create a manual
+snapshot using <code class="docutils literal"><span class="pre">create_snapshot()</span></code>.  The snapshot UUID is returned.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tintri.v310</span> <span class="k">import</span> <span class="n">Tintri</span>
+<span class="kn">from</span> <span class="nn">tintri.v310</span> <span class="k">import</span> <span class="n">SnapshotSpec</span>
+
+<span class="k">def</span> <span class="nf">take_snapshot</span><span class="p">(</span><span class="n">tintri</span><span class="p">,</span> <span class="n">vm_uuid</span><span class="p">,</span> <span class="n">snapshot_name</span><span class="p">,</span> <span class="n">consistency_type</span><span class="p">):</span>
+    <span class="n">snapshot_spec</span> <span class="o">=</span> <span class="n">SnapshotSpec</span><span class="p">()</span>
+    <span class="n">snapshot_spec</span><span class="o">.</span><span class="n">consistency</span> <span class="o">=</span> <span class="n">consistency_type</span>
+    <span class="n">snapshot_spec</span><span class="o">.</span><span class="n">retentionMinutes</span> <span class="o">=</span> <span class="mi">240</span>  <span class="c1"># 4 hours</span>
+    <span class="n">snapshot_spec</span><span class="o">.</span><span class="n">snapshotName</span> <span class="o">=</span> <span class="n">snapshot_name</span>
+    <span class="n">snapshot_spec</span><span class="o">.</span><span class="n">sourceVmTintriUUID</span> <span class="o">=</span> <span class="n">vm_uuid</span>
+
+    <span class="n">snapshot_specs</span> <span class="o">=</span> <span class="p">[</span><span class="n">snapshot_spec</span><span class="p">]</span>
+
+    <span class="n">snapshot_result</span> <span class="o">=</span> <span class="n">tintri</span><span class="o">.</span><span class="n">create_snapshot</span><span class="p">(</span><span class="n">snapshot_specs</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="n">snapshot_name</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">snapshot_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+<p>There is one exception, to clone a VM, use the <code class="docutils literal"><span class="pre">clone_vm</span></code> method.</p>
+</div>
+<div class="section" id="modifying-server-information">
+<h3>Modifying Server Information<a class="headerlink" href="#modifying-server-information" title="Permalink to this headline">¶</a></h3>
+<p>Updating objects are done with <code class="docutils literal"><span class="pre">update_</span></code> methods.</p>
+<p>One method using <code class="docutils literal"><span class="pre">update_appliance()</span></code> is using named parameters:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Create the appliance maintenance mode object.</span>
+<span class="n">new_maint_mode_info</span> <span class="o">=</span> <span class="n">ApplianceMaintenanceMode</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">new_is_enabled</span><span class="p">):</span>
+    <span class="c1"># Add attributes for enabling.</span>
+    <span class="n">new_maint_mode_info</span><span class="o">.</span><span class="n">isEnabled</span> <span class="o">=</span>  <span class="n">new_is_enabled</span>
+    <span class="n">new_maint_mode_info</span><span class="o">.</span><span class="n">endTime</span> <span class="o">=</span>  <span class="n">add_6_str</span>
+    <span class="n">new_maint_mode_info</span><span class="o">.</span><span class="n">startTime</span> <span class="o">=</span>  <span class="n">now_str</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Add attributes for disabling.</span>
+    <span class="n">new_maint_mode_info</span><span class="o">.</span><span class="n">isEnabled</span> <span class="o">=</span>  <span class="n">new_is_enabled</span>
+
+<span class="n">server</span><span class="o">.</span><span class="n">update_appliance</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+                        <span class="n">maintenance_mode</span> <span class="o">=</span> <span class="n">new_maint_mode_info</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Another method is to use <code class="docutils literal"><span class="pre">MultipleSelectionRequest</span></code> with <code class="docutils literal"><span class="pre">update_vms_qos_config()</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Create new QoS object with the fields to be changed</span>
+<span class="n">modify_qos_info</span> <span class="o">=</span> <span class="n">VirtualMachineQoSConfig</span><span class="p">()</span>
+<span class="n">modify_qos_info</span><span class="o">.</span><span class="n">minNormalizedIops</span> <span class="o">=</span> <span class="n">new_min_qos</span>
+<span class="n">modify_qos_info</span><span class="o">.</span><span class="n">maxNormalizedIops</span> <span class="o">=</span> <span class="n">new_max_qos</span>
+
+<span class="c1"># Create the MultipleSelectionRequest object</span>
+<span class="n">MS_Request</span> <span class="o">=</span> <span class="n">MultipleSelectionRequest</span><span class="p">()</span>
+<span class="n">MS_Request</span><span class="o">.</span><span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">vm1</span><span class="o">.</span><span class="n">get_uuid</span><span class="p">(),</span> <span class="n">vm2</span><span class="o">.</span><span class="n">get_uuid</span><span class="p">()]</span>
+<span class="n">MS_Request</span><span class="o">.</span><span class="n">newValue</span> <span class="o">=</span> <span class="n">modify_qos_info</span>
+<span class="n">MS_Request</span><span class="o">.</span><span class="n">propertyNames</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;minNormalizedIops&quot;</span><span class="p">,</span> <span class="s2">&quot;maxNormalizedIops&quot;</span><span class="p">]</span>
+
+<span class="c1"># Update the min and max IOPs using a multiple selection request.</span>
+<span class="n">tintri</span><span class="o">.</span><span class="n">update_vms_qos_config</span><span class="p">(</span><span class="n">request</span> <span class="o">=</span> <span class="n">MS_Request</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deleting-server-information">
+<h3>Deleting Server Information<a class="headerlink" href="#deleting-server-information" title="Permalink to this headline">¶</a></h3>
+<p>Deleting objecs are done the <code class="docutils literal"><span class="pre">delete_</span></code> methods. A unique ID is needed to delete objects.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">snapshot_result</span> <span class="o">=</span> <span class="n">tintri</span><span class="o">.</span><span class="n">get_snapshots</span><span class="p">()</span>
+<span class="n">snapshot</span> <span class="o">=</span> <span class="n">snapshot_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">snapshot_uuid</span> <span class="o">=</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid</span>
+
+<span class="c1"># Delete the snapshot</span>
+<span class="n">tintri</span><span class="o">.</span><span class="n">delete_snapshot</span><span class="p">(</span><span class="n">snapshot_uuid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="help">
+<h2>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
+<p>To get more details about API, please examine the API documentation that is available from
+the Tintri <a class="reference external" href="http://support.tintri.com">support sitei</a>. Tintri has a
+<a class="reference external" href="http://hub.tintricity.com/discussions/automation">community site</a> for asking questions.
+On the <a class="reference external" href="http://www.tintri.com/blog">corporate blog</a>, use the pull down to find blogs on APIs.
+Also, there is another blog, <a class="reference external" href="https://tintriapiui.wordpress.com/">Tintri API and UI Ramblings</a>
+for more API information. Comments and questions can be e-mailed to <a class="reference external" href="mailto:pysdk&#37;&#52;&#48;tintri&#46;com">pysdk<span>&#64;</span>tintri<span>&#46;</span>com</a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tutorial</a><ul>
+<li><a class="reference internal" href="#installing">Installing</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
+<li><a class="reference internal" href="#collecting-server-information">Collecting Server Information</a></li>
+<li><a class="reference internal" href="#creating-server-information">Creating Server Information</a></li>
+<li><a class="reference internal" href="#modifying-server-information">Modifying Server Information</a></li>
+<li><a class="reference internal" href="#deleting-server-information">Deleting Server Information</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#help">Help</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Tintri Python SDK Documentation</a></li>
+      <li>Next: <a href="code.html" title="next chapter">Class Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Tintri.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

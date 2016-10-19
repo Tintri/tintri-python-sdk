@@ -1,0 +1,46 @@
+<HTML><HEAD><TITLE>XML element VirtualMachineVmwareInfo</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VirtualMachineVmwareInfo</h2>Information on the Hypervisor that owns the virtual machine instance.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineVmwareInfo",
+   "<a href='#m_configurationFilepath'>configurationFilepath</a>": &ltString&gt,
+   "<a href='#m_folderPath'>folderPath</a>": &ltString&gt,
+   "<a href='#m_hasBaseExtents'>hasBaseExtents</a>": &ltBoolean&gt,
+   "<a href='#m_hasSnapshots'>hasSnapshots</a>": &ltBoolean&gt,
+   "<a href='#m_host'>host</a>": &ltString&gt,
+   "<a href='#m_hypervisorManagerDisplayName'>hypervisorManagerDisplayName</a>": &ltString&gt,
+   "<a href='#m_hypervisorPath'>hypervisorPath</a>": &ltString&gt,
+   "<a href='#m_hypervisorType'>hypervisorType</a>": 'VMWARE' | 'RHEV' | 'HYPERV' | 'UNKNOWN' | 'OPENSTACK' | 'XENSERVER' | 'VMWARE_VVOL',
+   "<a href='#m_instanceUuids'>instanceUuids</a>": &ltString&gt,
+   "<a href='#m_ip'>ip</a>": &ltString&gt,
+   "<a href='#m_isPowered'>isPowered</a>": &ltBoolean&gt,
+   "<a href='#m_isTemplate'>isTemplate</a>": &ltBoolean&gt,
+   "<a href='#m_lastUpdateFromHypervisor'>lastUpdateFromHypervisor</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_mor'>mor</a>": &ltString&gt,
+   "<a href='#m_name'>name</a>": &ltString&gt,
+   "<a href='#m_storageContainerIds'>storageContainerIds</a>": &ltString&gt,
+   "<a href='#m_storageContainers'>storageContainers</a>": &ltString&gt,
+   "<a href='#m_subdir'>subdir</a>": &ltString&gt,
+   "<a href='#m_supportedSnapshotConsistencyTypes'>supportedSnapshotConsistencyTypes</a>": 'CRASH_CONSISTENT' | 'VM_CONSISTENT',
+   "<a href='#m_vcenterName'>vcenterName</a>": &ltString&gt,
+   "<a href='#m_virtualDiskExtentPath'>virtualDiskExtentPath</a>": &ltString&gt,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_configurationFilepath'>configurationFilepath</td><td>xsd:string</td><td>The VM configuration file path.</td></tr><tr><td id='m_folderPath'>folderPath</td><td>xsd:string</td><td>The hypervisor topology path</td></tr><tr><td id='m_hasBaseExtents'>hasBaseExtents</td><td>xsd:boolean</td><td>'True' if VM has file that tagged as baseExtents</td></tr><tr><td id='m_hasSnapshots'>hasSnapshots</td><td>xsd:boolean</td><td>'True' indicates if the VM has at lease one snapshot. 'False' indicates that the VM has no snapshots.</td></tr><tr><td id='m_host'>host</td><td>xsd:string</td><td>The hypervisor host.</td></tr><tr><td id='m_hypervisorManagerDisplayName'>hypervisorManagerDisplayName</td><td>xsd:string</td><td>The hypervisor manager display name.</td></tr><tr><td id='m_hypervisorPath'>hypervisorPath</td><td>xsd:string</td><td>The pre-formatted string value about the folderPath as "hypervisorName > folderPath". This is for UI
+ display purpose.</td></tr><tr><td id='m_hypervisorType'>hypervisorType</td><td>VMWARE | RHEV | HYPERV | UNKNOWN | OPENSTACK | XENSERVER | VMWARE_VVOL</td><td>The type of hypervisor<table class='info'><tr><td>VMWARE</td><td>VMware hypervisor</td></tr><tr><td>RHEV</td><td>Red Hat hypervisor</td></tr><tr><td>HYPERV</td><td>Microsoft hypervisor</td></tr><tr><td>UNKNOWN</td><td>Unknown hypervisor</td></tr><tr><td>OPENSTACK</td><td>OpenStack platform</td></tr><tr><td>XENSERVER</td><td>Citrix hypervisor</td></tr><tr><td>VMWARE_VVOL</td><td>VMware virtual volume</td></tr></table></td></tr><tr><td id='m_instanceUuids'>instanceUuids</td><td>xsd:list[xsd:string]</td><td>The list of UUIDs assigned to the VM by the owning Hypervisor.</td></tr><tr><td id='m_ip'>ip</td><td>xsd:string</td><td>The VM's IP address.</td></tr><tr><td id='m_isPowered'>isPowered</td><td>xsd:boolean</td><td>'True' indicates that the VM is powered on.  'False' indicates the VM is powered off.</td></tr><tr><td id='m_isTemplate'>isTemplate</td><td>xsd:boolean</td><td>'True' indicates that the VM is a designated template from which VM's should be cloned from.
+ 'False' indicates the VM is not a template though it can also be cloned.</td></tr><tr><td id='m_lastUpdateFromHypervisor'>lastUpdateFromHypervisor</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>The timestamp when the VM was last updated from the Hypervisor</td></tr><tr><td id='m_mor'>mor</td><td>xsd:string</td><td>The hypervisor assigned ID of the VM.</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>The display name of the VM.</td></tr><tr><td id='m_storageContainerIds'>storageContainerIds</td><td>xsd:list[xsd:string]</td><td>List of storage containers' IDs assigned by hypervisor manager.</td></tr><tr><td id='m_storageContainers'>storageContainers</td><td>xsd:list[xsd:string]</td><td>The list of storage containers owned by the Hypervisor.</td></tr><tr><td id='m_subdir'>subdir</td><td>xsd:string</td><td>The sub directory of this Hypervisor.</td></tr><tr><td id='m_supportedSnapshotConsistencyTypes'>supportedSnapshotConsistencyTypes</td><td>xsd:list[CRASH_CONSISTENT | VM_CONSISTENT]</td><td>The supported snapshot consistency types<table class='info'><tr><td>CRASH_CONSISTENT</td><td>Disk activity quiesed snapshot</td></tr><tr><td>VM_CONSISTENT</td><td>VM activity  quiesed snapshot</td></tr></table></td></tr><tr><td id='m_vcenterName'>vcenterName</td><td>xsd:string</td><td>The hypervisor manager name</td></tr><tr><td id='m_virtualDiskExtentPath'>virtualDiskExtentPath</td><td>xsd:string</td><td>The VMDK file path</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

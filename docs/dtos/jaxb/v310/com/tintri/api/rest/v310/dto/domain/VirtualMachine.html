@@ -1,0 +1,72 @@
+<HTML><HEAD><TITLE>XML element VirtualMachine</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: VirtualMachine</h2>Entity represents encapsulation of virtual machine, the files of which are
+ stored and managed by Datastore / Tintri System.
+
+ ManagedEntity uuid will be set to the primary tintriUuid.
+ The Tintri assigned unique identifier for this virtual machine. It can
+ be hypervisor dependent to some extent, but also linked to Tintri File
+ System implementation. For example, for VMware VM, it would look as:<br>
+
+ &lt;File System UUID&gt; -VIM- &lt;VMX file id hexadecimal representation&gt;<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.VirtualMachine",
+   "<a href='#m_diskFormatDescription'>diskFormatDescription</a>": &ltString&gt,
+   "<a href='#m_hasSyncVmFileLevelRestoreDisk'>hasSyncVmFileLevelRestoreDisk</a>": &ltBoolean&gt,
+   "<a href='#m_isDeleted'>isDeleted</a>": &ltBoolean&gt,
+   "<a href='#m_isLive'>isLive</a>": &ltBoolean&gt,
+   "<a href='#m_lastConfigChangedTime'>lastConfigChangedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_localAlias'>localAlias</a>": &ltString&gt,
+   "<a href='#m_pinnedType'>pinnedType</a>": 'NOT_PINNED' | 'PARTIALLY_PINNED' | 'PINNED',
+   "<a href='#m_provisionedType'>provisionedType</a>": 'THICK' | 'THIN' | 'PENDING',
+   "<a href='#m_supportMode'>supportMode</a>": &ltString&gt,
+   "<a href='#m_timeDeleted'>timeDeleted</a>": &ltDate&gt,
+   "<a href='#m_tintriUuidAliasList'>tintriUuidAliasList</a>": &ltString&gt,
+   "<a href='#m_vmstoreName'>vmstoreName</a>": &ltString&gt,
+   "<a href='#m_vmstoreTintriUuid'>vmstoreTintriUuid</a>": &ltString&gt,
+   "<a href='#m_affinityRule'>affinityRule</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineAffinityRule.html'>VirtualMachineAffinityRule</a>,
+   "<a href='#m_composition'>composition</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineComposition.html'>VirtualMachineComposition</a>,
+   "<a href='#m_migration'>migration</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineMigrationInfo.html'>VirtualMachineMigrationInfo</a>,
+   "<a href='#m_policyError'>policyErrors</a>": [<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/PolicyError.html'>PolicyError</a>],
+   "<a href='#m_qosConfig'>qosConfig</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html'>VirtualMachineQoSConfig</a>,
+   "<a href='#m_replication'>replication</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineReplicationInfo.html'>VirtualMachineReplicationInfo</a>,
+   "<a href='#m_serviceGroup'>serviceGroup</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineServiceGroupInfo.html'>VirtualMachineServiceGroupInfo</a>,
+   "<a href='#m_snapshot'>snapshot</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotInfo.html'>VirtualMachineSnapshotInfo</a>,
+   "<a href='#m_stat'>stat</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html'>Stats</a>,
+   "<a href='#m_tagCollections'>tagCollections</a>": [<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TagCollection.html'>TagCollection</a>],
+   "<a href='#m_uuid'>uuid</a>": <a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+   "<a href='#m_vmware'>vmware</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineVmwareInfo.html'>VirtualMachineVmwareInfo</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_affinityRule'>affinityRule</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineAffinityRule.html'>VirtualMachineAffinityRule</a></td><td>The affinity rule.</td></tr><tr><td id='m_composition'>composition</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineComposition.html'>VirtualMachineComposition</a></td><td><b>TgcOnly </b>Information about VM artifacts in the cluster managed by this Tintri Global Center.</td></tr><tr><td id='m_migration'>migration</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineMigrationInfo.html'>VirtualMachineMigrationInfo</a></td><td>Obtains the virtual machine replication information.</td></tr><tr><td id='m_policyError'>policyError (wrapped by policyErrors)</td><td>xsd:list[<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/PolicyError.html'>PolicyError</a>]</td><td><b>TgcOnly </b>Errors associated with per-VM policies which require user intervention to resolve.</td></tr><tr><td id='m_qosConfig'>qosConfig</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html'>VirtualMachineQoSConfig</a></td><td>Obtains the virtual machine QoS config information.</td></tr><tr><td id='m_replication'>replication</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineReplicationInfo.html'>VirtualMachineReplicationInfo</a></td><td>Obtains the virtual machine replication information.</td></tr><tr><td id='m_serviceGroup'>serviceGroup</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineServiceGroupInfo.html'>VirtualMachineServiceGroupInfo</a></td><td>Obtains the VM's service group information. A service group is a logical entity
+ that groups one or more virtual machines together for the ease of classification.</td></tr><tr><td id='m_snapshot'>snapshot</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotInfo.html'>VirtualMachineSnapshotInfo</a></td><td>Obtains the virtual machine snapshot information.</td></tr><tr><td id='m_stat'>stat</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html'>Stats</a></td><td>Statistics as 
+ <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/VirtualMachineStat.html", "VirtualMachineStat");
+ </script>
+ for the virtual machine.</td></tr><tr><td id='m_tagCollections'>tagCollections</td><td>xsd:list[<a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TagCollection.html'>TagCollection</a>]</td><td>Obtains the list of tag collections that are associated with this virtual machine.
+ A tag collection is a collection of tags collected from a hypervisor instance, and from multiple sources.
+ Tags provide a way to annotate objects.  Tags can be used for different purposes such as grouping, sorting or searching on objects.
+ All the tags in this collection are collected from one hypervisor instance, and 
+ from multiple sources.  Some examples of sources are VMware vSphere metadata, VMware vSphere 
+ Custom Attributes, VMware vSphere Tags, OpenStack instance tags.</td></tr><tr><td id='m_uuid'>uuid</td><td><a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Unique Tintri UUID for the object</td></tr><tr><td id='m_vmware'>vmware</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineVmwareInfo.html'>VirtualMachineVmwareInfo</a></td><td>Obtains hypervisor information about the VM.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_diskFormatDescription'>diskFormatDescription</td><td>xsd:string</td><td>Obtains the disk format description.</td></tr><tr><td id='m_hasSyncVmFileLevelRestoreDisk'>hasSyncVmFileLevelRestoreDisk</td><td>xsd:boolean</td><td>'True' if virtual machine contains virtual disk that is restored via SyncVM File-Level Restore.</td></tr><tr><td id='m_isDeleted'>isDeleted</td><td>xsd:boolean</td><td>Return the flag indicating whether this virtual machine is deleted</td></tr><tr><td id='m_isLive'>isLive</td><td>xsd:boolean</td><td>Checks if is live.</td></tr><tr><td id='m_lastConfigChangedTime'>lastConfigChangedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Latest timestamp when snapshot schedule or replication configuration for
+ this VM was changed.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz</td></tr><tr><td id='m_localAlias'>localAlias</td><td>xsd:string</td><td>Alias used for the entity instance in this Tintri API server.
+ If an alias is not set, then localAlias is not returned.</td></tr><tr><td id='m_pinnedType'>pinnedType</td><td>NOT_PINNED | PARTIALLY_PINNED | PINNED</td><td>Obtains the pin type of the VM.<table class='info'><tr><td>NOT_PINNED</td><td>VM disks are not pinned in cache</td></tr><tr><td>PARTIALLY_PINNED</td><td>Some, but not all of the VM disks are pinned in cache</td></tr><tr><td>PINNED</td><td>All VM disks are pinned in cache</td></tr></table></td></tr><tr><td id='m_provisionedType'>provisionedType</td><td>THICK | THIN | PENDING</td><td>Obtains the provisioned type of the VM.<table class='info'><tr><td>THICK</td><td>At least one VM disk is thick provisioned</td></tr><tr><td>THIN</td><td>All VM disks are thin provisioned</td></tr><tr><td>PENDING</td><td>Provision type not available until the next statistics reporting</td></tr></table></td></tr><tr><td id='m_supportMode'>supportMode</td><td>xsd:string</td><td>Obtains the support mode for the this VM.</td></tr><tr><td id='m_timeDeleted'>timeDeleted</td><td>xsd:datetime</td><td>Obtains the timestamp the VM was deleted.</td></tr><tr><td id='m_tintriUuidAliasList'>tintriUuidAliasList</td><td>xsd:list[xsd:string]</td><td>Obtains a list of Tintri UUID aliases. An alias is another Tintri UUID
+ that was used to identify the same VM.</td></tr><tr><td id='m_vmstoreName'>vmstoreName</td><td>xsd:string</td><td><b>TgcOnly </b>Name of the primary VMstore for the VM</td></tr><tr><td id='m_vmstoreTintriUuid'>vmstoreTintriUuid</td><td>xsd:string</td><td><b>TgcOnly </b>Tintri UUID of the primary VMstore for the VM</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

@@ -1,0 +1,52 @@
+<HTML><HEAD><TITLE>XML element ReplLink</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: ReplLink</h2>The managed entity stands for a network path between two VMstores or even two TGC managed cluster members over which 
+ VMs are replicated from one VMstore to another using Tintri Replication Proprietary Technology.
+ 
+ Existing bean "beans.repl.DatastoreReplicationPath" is a model for replication link from a datastore perspective,
+ essentially a view from one end of the link whereas ReplLink is an abstraction of the same physical entity at the
+ TGC managed cluster lever where we can afford to take a view of 'both ends of the link' rather than having a 
+ 'tunnel vision' from a single link end point.
+ 
+ What additional value does it bring then? Basically to view the replication link in a cluster perspective enabling
+ our end users to explore other avenues whenever we see problem on one single link,<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.ReplLink",
+   "<a href='#m_dataProtecedInAWeek'>dataProtecedInAWeek</a>": &ltNumber&gt,
+   "<a href='#m_dataProtectedInADay'>dataProtectedInADay</a>": &ltNumber&gt,
+   "<a href='#m_destClusterMemberId'>destClusterMemberId</a>": &ltString&gt,
+   "<a href='#m_destIp'>destIp</a>": &ltString&gt,
+   "<a href='#m_destPassphrase'>destPassphrase</a>": &ltString&gt,
+   "<a href='#m_destPort'>destPort</a>": &ltNumber&gt,
+   "<a href='#m_displayName'>displayName</a>": &ltString&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_localAlias'>localAlias</a>": &ltString&gt,
+   "<a href='#m_sourceClusterMemberId'>sourceClusterMemberId</a>": &ltString&gt,
+   "<a href='#m_sourceIp'>sourceIp</a>": &ltString&gt,
+   "<a href='#m_type'>type</a>": 'OUTGOING' | 'INCOMING',
+   "<a href='#m_linkThrottle'>linkThrottle</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPathThrottle.html'>DatastoreReplicationPathThrottle</a>,
+   "<a href='#m_stat'>stat</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html'>Stats</a>,
+   "<a href='#m_uuid'>uuid</a>": <a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_linkThrottle'>linkThrottle</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPathThrottle.html'>DatastoreReplicationPathThrottle</a></td><td>Throttling policy in effect for the link (we do not track it historically, it always the latest value)</td></tr><tr><td id='m_stat'>stat</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html'>Stats</a></td><td>Contains one or more performance slice including the latest period.</td></tr><tr><td id='m_uuid'>uuid</td><td><a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Unique Tintri UUID for the object</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_dataProtecedInAWeek'>dataProtecedInAWeek</td><td>xsd:double</td><td>Amount of data protected(MB) in the last week.</td></tr><tr><td id='m_dataProtectedInADay'>dataProtectedInADay</td><td>xsd:double</td><td>Amount of data protected(MB) in the last 24 hours.</td></tr><tr><td id='m_destClusterMemberId'>destClusterMemberId</td><td>xsd:string</td><td>The local ID of link destination.</td></tr><tr><td id='m_destIp'>destIp</td><td>xsd:string</td><td>IP address of the destination VMstore used for the link.</td></tr><tr><td id='m_destPassphrase'>destPassphrase</td><td>xsd:string</td><td>Passphrase used on destination</td></tr><tr><td id='m_destPort'>destPort</td><td>xsd:int</td><td>Port on destination VMstore used for the link</td></tr><tr><td id='m_displayName'>displayName</td><td>xsd:string</td><td>User assigned name for the replication link.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz</td></tr><tr><td id='m_localAlias'>localAlias</td><td>xsd:string</td><td>Alias used for the entity instance in this Tintri API server.
+ If an alias is not set, then localAlias is not returned.</td></tr><tr><td id='m_sourceClusterMemberId'>sourceClusterMemberId</td><td>xsd:string</td><td>The local ID of link source.</td></tr><tr><td id='m_sourceIp'>sourceIp</td><td>xsd:string</td><td>IP address of the source VMstore used for the link.</td></tr><tr><td id='m_type'>type</td><td>OUTGOING | INCOMING</td><td>The type of replication path relative to this node.<table class='info'><tr><td>OUTGOING</td><td>Replication link which replicates data from this VMstore
+  to a remote VMstore</td></tr><tr><td>INCOMING</td><td>Replication link which replicates data from a remote
+ VMstore to this VMstore</td></tr></table></td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

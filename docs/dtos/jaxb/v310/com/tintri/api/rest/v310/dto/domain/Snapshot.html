@@ -1,0 +1,79 @@
+<HTML><HEAD><TITLE>XML element Snapshot</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: Snapshot</h2>Contains snapshot information such as the creation time stamp and size change.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.Snapshot",
+   "<a href='#m_cloneReferenceCount'>cloneReferenceCount</a>": &ltNumber&gt,
+   "<a href='#m_createTime'>createTime</a>": &ltDate&gt,
+   "<a href='#m_creatorName'>creatorName</a>": &ltString&gt,
+   "<a href='#m_description'>description</a>": &ltString&gt,
+   "<a href='#m_expirationTime'>expirationTime</a>": &ltDate&gt,
+   "<a href='#m_id'>id</a>": &ltString&gt,
+   "<a href='#m_isCollapsed'>isCollapsed</a>": &ltBoolean&gt,
+   "<a href='#m_isDeleted'>isDeleted</a>": &ltBoolean&gt,
+   "<a href='#m_isLastReplicatedSnapshot'>isLastReplicatedSnapshot</a>": &ltBoolean&gt,
+   "<a href='#m_isOrphaned'>isOrphaned</a>": &ltBoolean&gt,
+   "<a href='#m_isReplica'>isReplica</a>": &ltBoolean&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_localAlias'>localAlias</a>": &ltString&gt,
+   "<a href='#m_replicaRetentionMinutes'>replicaRetentionMinutes</a>": &ltNumber&gt,
+   "<a href='#m_replicationId'><del>replicationId</del></a>": &ltNumber&gt,
+   "<a href='#m_sizeChangedMB'>sizeChangedMB</a>": &ltNumber&gt,
+   "<a href='#m_sizeChangedPhysicalMB'>sizeChangedPhysicalMB</a>": &ltNumber&gt,
+   "<a href='#m_tag'>tag</a>": &ltString&gt,
+   "<a href='#m_timeDeleted'>timeDeleted</a>": &ltDate&gt,
+   "<a href='#m_vcenterInstanceUuid'>vcenterInstanceUuid</a>": &ltString&gt,
+   "<a href='#m_vmIsTemplate'>vmIsTemplate</a>": &ltBoolean&gt,
+   "<a href='#m_vmName'>vmName</a>": &ltString&gt,
+   "<a href='#m_consistency'>consistency</a>": 'CRASH_CONSISTENT' | 'VM_CONSISTENT' | 'APP_CONSISTENT',
+   "<a href='#m_deletionPolicy'>deletionPolicy</a>": 'DELETE_ON_EXPIRATION' | 'DELETE_ON_ZERO_CLONE_REFERENCES' | 'DELETE_ON_SYNCREPL_RESYNC_COMPLETE',
+   "<a href='#m_hypervisorType'>hypervisorType</a>": 'VMWARE' | 'RHEV' | 'HYPERV' | 'UNKNOWN' | 'OPENSTACK' | 'XENSERVER' | 'VMWARE_VVOL',
+   "<a href='#m_snapshotComposition'>snapshotComposition</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/SnapshotComposition.html'>SnapshotComposition</a>,
+   "<a href='#m_type'>type</a>": 'SCHEDULED_SNAPSHOT' | 'USER_GENERATED_SNAPSHOT' | 'AUTO_GENERATED_CLONING_SNAPSHOT' | 'VAAI_GENERATED_SNAPSHOT' | 'ODX_GENERATED_SNAPSHOT' | 'CINDER_GENERATED_SNAPSHOT' | 'SCHEDULED_HIGH_FREQUENCY_SNAPSHOT' | 'HYPERV_SHARE_SNAPSHOT' | 'SYNCREPL_RESYNC_SNAPSHOT',
+   "<a href='#m_uuid'>uuid</a>": <a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+   "<a href='#m_vmUuid'>vmUuid</a>": <a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_consistency'>consistency</td><td>CRASH_CONSISTENT | VM_CONSISTENT | APP_CONSISTENT</td><td>The consistency type. Crash consistency is a VMstore snapshot that can be used to 
+ recover from a VM crash.  VM consistency is a hypervisor snapshot that is hypervisor
+ consistent and can be used to recover from a VM crash. App consistency is not
+ used at this time.<table class='info'><tr><td>CRASH_CONSISTENT</td><td>Disk activity quiesed snapshot</td></tr><tr><td>VM_CONSISTENT</td><td>VM activity  quiesed snapshot</td></tr><tr><td>APP_CONSISTENT</td><td>Application activity quiesed snapshot (currently not used)</td></tr></table></td></tr><tr><td id='m_deletionPolicy'>deletionPolicy</td><td>DELETE_ON_EXPIRATION | DELETE_ON_ZERO_CLONE_REFERENCES | DELETE_ON_SYNCREPL_RESYNC_COMPLETE</td><td>The snapshot deletion policy: delete when retention minutes exprire or
+ when there are zero clone references.<table class='info'><tr><td>DELETE_ON_EXPIRATION</td><td>Delete snapshot when expirationTime is reached</td></tr><tr><td>DELETE_ON_ZERO_CLONE_REFERENCES</td><td>Delete snapshot when there are no clones</td></tr><tr><td>DELETE_ON_SYNCREPL_RESYNC_COMPLETE</td><td>Delete snapshot by filesystem when Synchronous Replication resync is completed</td></tr></table></td></tr><tr><td id='m_hypervisorType'>hypervisorType</td><td>VMWARE | RHEV | HYPERV | UNKNOWN | OPENSTACK | XENSERVER | VMWARE_VVOL</td><td>The hypervisor type: VMware, RHEV, HyperV, OpenStack, XenServer, VVol, or unknown.<table class='info'><tr><td>VMWARE</td><td>VMware hypervisor</td></tr><tr><td>RHEV</td><td>Red Hat hypervisor</td></tr><tr><td>HYPERV</td><td>Microsoft hypervisor</td></tr><tr><td>UNKNOWN</td><td>Unknown hypervisor</td></tr><tr><td>OPENSTACK</td><td>OpenStack platform</td></tr><tr><td>XENSERVER</td><td>Citrix hypervisor</td></tr><tr><td>VMWARE_VVOL</td><td>VMware virtual volume</td></tr></table></td></tr><tr><td id='m_snapshotComposition'>snapshotComposition</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/SnapshotComposition.html'>SnapshotComposition</a></td><td>The snapshot compostion which consists of total snapshot size and a replica map.
+ Used only by TGC.</td></tr><tr><td id='m_type'>type</td><td>SCHEDULED_SNAPSHOT | USER_GENERATED_SNAPSHOT | AUTO_GENERATED_CLONING_SNAPSHOT | VAAI_GENERATED_SNAPSHOT | ODX_GENERATED_SNAPSHOT | CINDER_GENERATED_SNAPSHOT | SCHEDULED_HIGH_FREQUENCY_SNAPSHOT | HYPERV_SHARE_SNAPSHOT | SYNCREPL_RESYNC_SNAPSHOT</td><td>The snapshot type.<table class='info'><tr><td>SCHEDULED_SNAPSHOT</td><td>Snapshots created from a snapshot schedule.</td></tr><tr><td>USER_GENERATED_SNAPSHOT</td><td>Snapshots created manually by a user.</td></tr><tr><td>AUTO_GENERATED_CLONING_SNAPSHOT</td><td>Snapshots created as a part of Tintri clones.</td></tr><tr><td>VAAI_GENERATED_SNAPSHOT</td><td>Snapshots created on Tintri VMstore using VAAI plugin to facilitate VMware clone operation.</td></tr><tr><td>ODX_GENERATED_SNAPSHOT</td><td>Snapshots for files that get copied onto Vmstore using ODX(Offline Data Transfer).</td></tr><tr><td>CINDER_GENERATED_SNAPSHOT</td><td>Snapshots for cinder volumes.</td></tr><tr><td>SCHEDULED_HIGH_FREQUENCY_SNAPSHOT</td><td>Snapshots created at a high frequency schedule.</td></tr><tr><td>HYPERV_SHARE_SNAPSHOT</td><td>Snapshots for Hyper-V shares, for the purpose of backup.</td></tr><tr><td>SYNCREPL_RESYNC_SNAPSHOT</td><td>Snapshot for Synchronous Replication (resync).</td></tr></table></td></tr><tr><td id='m_uuid'>uuid</td><td><a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Unique Tintri UUID for the object</td></tr><tr><td id='m_vmUuid'>vmUuid</td><td><a href='../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>The source VM Tintri UUID. It can be null in some cases for a VAAI snapshot.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_cloneReferenceCount'>cloneReferenceCount</td><td>xsd:int</td><td>The clone reference count for this snapshot.  The range is 0..2^31-1;
+ however, others limits will be reached before this limit is reached.</td></tr><tr><td id='m_createTime'>createTime</td><td>xsd:datetime</td><td>The snapshot creation time specified as the number of milliseconds
+ since January 1, 1970.</td></tr><tr><td id='m_creatorName'>creatorName</td><td>xsd:string</td><td>The snapshot creator's name.</td></tr><tr><td id='m_description'>description</td><td>xsd:string</td><td>The snapshot description.</td></tr><tr><td id='m_expirationTime'>expirationTime</td><td>xsd:datetime</td><td>The snapshot expiration date specified as the number of milliseconds
+ since January 1, 1970.</td></tr><tr><td id='m_id'>id</td><td>xsd:string</td><td>Returns the global snapshot ID. At this time, Tintri use only.</td></tr><tr><td id='m_isCollapsed'>isCollapsed</td><td>xsd:boolean</td><td>'True' indicates that the snapshot is collapsed. 
+ 'False' indicates that the snapshot has not been collapsed.
+ Tintri use only at this time.</td></tr><tr><td id='m_isDeleted'>isDeleted</td><td>xsd:boolean</td><td>'True' indicates that the snapshot is deleted, while
+ 'False' indicates that the snapshot is not deleted.</td></tr><tr><td id='m_isLastReplicatedSnapshot'>isLastReplicatedSnapshot</td><td>xsd:boolean</td><td>'True' indicates that the snapshot is the last replicated snapshot, while
+ 'False' indicates that the snapshot is not the last replicated snapshot.</td></tr><tr><td id='m_isOrphaned'>isOrphaned</td><td>xsd:boolean</td><td>'True' indicates that the snapshot's source is not available or orphaned, while
+ 'False' indicates that the snapshot's source is available or not orphaned.</td></tr><tr><td id='m_isReplica'>isReplica</td><td>xsd:boolean</td><td>'True' indicates that the snapshot is a replica.
+ 'False' indicates that the snapshot is not a replica.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz</td></tr><tr><td id='m_localAlias'>localAlias</td><td>xsd:string</td><td>Alias used for the entity instance in this Tintri API server.
+ If an alias is not set, then localAlias is not returned.</td></tr><tr><td id='m_replicaRetentionMinutes'>replicaRetentionMinutes</td><td>xsd:long</td><td>The number of minutes that the replica is to be retained before removing it.</td></tr><tr><td id='m_replicationId'>replicationId</td><td>xsd:long</td><td><b>Deprecated.</b>  Deprecated since v310.61.  Please see the elements configurationsIncoming and configurationsOutgoing in
+ <script>
+ 
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineReplicationInfo.html","VirtualMachineReplicationInfo");
+ </script></td></tr><tr><td id='m_sizeChangedMB'>sizeChangedMB</td><td>xsd:double</td><td>Total size changed in MiB from the last snapshot.</td></tr><tr><td id='m_sizeChangedPhysicalMB'>sizeChangedPhysicalMB</td><td>xsd:double</td><td>Physical size changed in MiB from the last snapshot.</td></tr><tr><td id='m_tag'>tag</td><td>xsd:string</td><td>The comma delimited snapshot metadata. It contains information
+ about the snapshot like the VVOL ID or whether the files used for the
+ snapshot are not up-to-date using keywords.
+ 
+ i.e. stale_ss_files,vvol:id123
+ This example means it lost it's hypervisor connection and the snapshot is a VVOL snapshot type.</td></tr><tr><td id='m_timeDeleted'>timeDeleted</td><td>xsd:datetime</td><td>The snapshot deleted date specified in milliseconds since January 1, 1970.</td></tr><tr><td id='m_vcenterInstanceUuid'>vcenterInstanceUuid</td><td>xsd:string</td><td>The vCenter instance UUID.</td></tr><tr><td id='m_vmIsTemplate'>vmIsTemplate</td><td>xsd:boolean</td><td>'True' indicates that the snapshot's source VM is a template.
+ 'False' indicates that the snapshot's source VM is not a template.</td></tr><tr><td id='m_vmName'>vmName</td><td>xsd:string</td><td>Snaphot's source VM name.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

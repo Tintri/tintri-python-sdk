@@ -1,0 +1,46 @@
+<HTML><HEAD><TITLE>XML element SyncReplStateInfo</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: SyncReplStateInfo</h2>Represents Synchronous Replication state information from one VMstore.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.syncrepl.SyncReplStateInfo",
+   "<a href='#m_host'>host</a>": &ltString&gt,
+   "<a href='#m_isPrimary'>isPrimary</a>": &ltBoolean&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_replicationIp'>replicationIp</a>": &ltString&gt,
+   "<a href='#m_state'>state</a>": 'IN_SYNC' | 'PAUSED' | 'RESYNCING' | 'ERROR' | 'INITIALIZING' | 'DELETION_IN_PROGRESS' | 'DELETED',
+   "<a href='#m_status'>status</a>": 'OK' | 'INFO' | 'WARNING' | 'MAJOR' | 'CRITICAL',
+   "<a href='#m_error'>error</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/common/SyncReplError.html'>SyncReplError</a>,
+   "<a href='#m_inSyncTimePercent'>inSyncTimePercent</a>": &ltNumber&gt,
+   "<a href='#m_primaryInfo'>primaryInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/common/SyncReplVmstoreInfo.html'>SyncReplVmstoreInfo</a>,
+   "<a href='#m_resyncStats'>resyncStats</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/SyncReplResyncStats.html'>SyncReplResyncStats</a>,
+   "<a href='#m_secondaryInfo'>secondaryInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/common/SyncReplVmstoreInfo.html'>SyncReplVmstoreInfo</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_error'>error</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/common/SyncReplError.html'>SyncReplError</a></td><td>The detail error information of this synchronous replication configuration.</td></tr><tr><td id='m_inSyncTimePercent'>inSyncTimePercent</td><td>xsd:double</td><td><b>TgcOnly </b>Percentage of time a service group is in sync using synchronous replication</td></tr><tr><td id='m_primaryInfo'>primaryInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/common/SyncReplVmstoreInfo.html'>SyncReplVmstoreInfo</a></td><td><b>TgcOnly </b>Information about the primary VMstore participant of the Synchronous Replication configuration.
+  TGC will use this information to identify which VMstore among all the participants, is
+  the primary of the Synchronous Replication relationship.</td></tr><tr><td id='m_resyncStats'>resyncStats</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/SyncReplResyncStats.html'>SyncReplResyncStats</a></td><td>Resynchronize statistics.
+ It returns null either there is no resynchronization operation or the operation has completed.</td></tr><tr><td id='m_secondaryInfo'>secondaryInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/common/SyncReplVmstoreInfo.html'>SyncReplVmstoreInfo</a></td><td><b>TgcOnly </b>Information about the secondary VMstore participant of the Synchronous Replication configuration.
+  TGC will use this information to identify which VMstore among all the participants, is
+  the secondary of the Synchronous Replication relationship.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_host'>host</td><td>xsd:string</td><td><b>VMstoreOnly </b>The host name of the current VMstore appliance.</td></tr><tr><td id='m_isPrimary'>isPrimary</td><td>xsd:boolean</td><td><b>VMstoreOnly </b>True if Synchronous Replication is the primary, false otherwise.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Time stamp when the object is last updated.</td></tr><tr><td id='m_replicationIp'>replicationIp</td><td>xsd:string</td><td><b>VMstoreOnly </b>Replication IP address for the Synchronous Replication.</td></tr><tr><td id='m_state'>state</td><td>IN_SYNC | PAUSED | RESYNCING | ERROR | INITIALIZING | DELETION_IN_PROGRESS | DELETED</td><td>The current state of the synchronous replication configuration.<table class='info'><tr><td>IN_SYNC</td><td>Synchronous Replication configuration is up and running well.</td></tr><tr><td>PAUSED</td><td>Synchronous Replication configuration has been paused by the user.</td></tr><tr><td>RESYNCING</td><td>Synchronous Replication configuration is set up and both primary and secondary are connected, and they are in the process of
+ syncing.</td></tr><tr><td>ERROR</td><td>Synchronous Replication configuration is in error, which means primary and secondary lost connection to each other.</td></tr><tr><td>INITIALIZING</td><td>TGC is in the process of pushing the Configuration to participating VMstores.</td></tr><tr><td>DELETION_IN_PROGRESS</td><td>Set to this state when TGC is processing a request to delete the ServiceGroup on all the participating VMstores. 
+ When the status is set to this value, Synchronous Replication may still be active on participating VMstore(s).</td></tr><tr><td>DELETED</td><td>TGC has already deleted the Synchronous Replication configuration and has only the metadata  
+ information from the participating VMstores, for showing historical performance  
+ information. This metadata and performance information will be retained in TGC for 
+ 30 days from the date of deletion.</td></tr></table></td></tr><tr><td id='m_status'>status</td><td>OK | INFO | WARNING | MAJOR | CRITICAL</td><td><b>TgcOnly </b>The severity status of the synchronous replication.<table class='info'><tr><td>OK</td><td>Situation is normal.</td></tr><tr><td>INFO</td><td>Qualifies normal operating state changes or progress information.</td></tr><tr><td>WARNING</td><td>A condition has appeared which may become a problem. Only user awareness is required.</td></tr><tr><td>MAJOR</td><td>A problem exists. A user may need to take action.</td></tr><tr><td>CRITICAL</td><td>Requires immediate user action.</td></tr></table></td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>
