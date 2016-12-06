@@ -3,7 +3,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2015 Tintri, Inc.
+# Copyright (c) 2016 Tintri, Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -103,9 +103,11 @@ tintri.logout()
 all_flash = False
 show_all_flash = False
 
-if appliance_info.isAllFlash:
+try:
     all_flash = appliance_info.isAllFlash
     show_all_flash = True
+except AttributeError:
+    pass
 
 print("")
 

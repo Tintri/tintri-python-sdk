@@ -3,7 +3,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2015 Tintri, Inc.
+# Copyright (c) 2016 Tintri, Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -109,9 +109,12 @@ show_all_flash = False
 
 appliance_info = appliance.info
 
-if appliance_info.isAllFlash:
+try:
     all_flash = appliance_info.isAllFlash
     show_all_flash = True
+except AttributeError:
+    pass
+
 
 print("Appliance")
 table_header = ('Info', 'Value')
