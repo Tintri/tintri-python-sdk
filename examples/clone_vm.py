@@ -83,7 +83,7 @@ def clone_vm(uuid, clone_name, vcenter_name, datastore_name, num_clones):
     elif (uuid.find("SST") > -1):
         clone_spec.snapshotId = uuid
     else:
-        raise tintri.TintriServerError(0, cause="UUID is not a VM or snapshot UUID: " + uuid)
+        raise TintriServerError(0, cause="UUID is not a VM or snapshot UUID: " + uuid)
        
     print_info("Cloning " + uuid + " to " + clone_name + " for " + str(num_clones) + " times")
 
@@ -141,7 +141,7 @@ try:
     vms = tintri.get_vms(filters = vm_filter_spec)
 
     if vms.filteredTotal == 0:
-        raise tintri.TintriServerError(0, cause="VM " + vm_name + " doesn't exist")
+        raise TintriServerError(0, cause="VM " + vm_name + " doesn't exist")
 
     # Get the information from the first item and hopefully the only item.
     vm = vms[0]
@@ -162,7 +162,7 @@ try:
             break
 
     if (not found):
-        raise tintri.TintriRequestExeption(0, cause="Host resource " + vcenter_name + " not found")
+        raise TintriRequestExeption(0, cause="Host resource " + vcenter_name + " not found")
 
     print_info("Found " + vcenter_name + " in host resources")
     
