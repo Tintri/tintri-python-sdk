@@ -1,0 +1,54 @@
+# Uncomment more or lines below to see the column in a report
+# -----------------------------------------------------------
+# VmName, VM name
+# Uuid, VM Tintri UUID
+# VMstoreName, VMstore name
+# ReadIops, Read I/O operations per second
+# WriteIops, Write I/O operations per second
+# TotalIops, Total I/O operations per second
+# ReadMBps, Read throughput in MiB per second
+# WriteMBps, Write throughput in MiB per second
+# TotalMBps, Total throughput in MiB per second
+# ReservesAutoAllocated, Reserves allocated by TXOS
+# ReservesPinned, Reserves pinned
+# ReservesActual, Actual reserves
+# ReservesChange, Reserves changed
+# ReservesChangePercent, Reserves percent changed
+# ReservesUsed, Reserves used
+# ReservesRemaining, Reserves remaning
+# TotalLatency, Total latency in milliseconds
+# HostLatency, Host latency in milliseconds
+# NetworkLatency, Network latency in milliseconds
+# StorageLatency, Storage latency in milliseconds
+# DiskLatency, Disk latency in milliseconds
+# FlashHitPercent, Flash hit percentage
+# SpaceProvisioned, Logical space allocated on the datastore in GiB
+# SpaceUsedLive, Logical space used for live VM data and hypervisor snapshots in GiB
+# SpaceUsedTintriSnapshots, Space used for Tintri snapshots in GiB
+# SpaceUsedVmwareSnaphots, Space used for hypervisor snapshots in GiB
+# SpaceUsedChange, Live logical space minus the start data point line logical space in GiB
+# SpaceUsedChangePercent, Live logical space changed percentage
+# SpaceUsed, Space used in GiB
+# SpaceChangePerDay, Space changed per day in GiB
+# SpaceUsedDifferenceFromMaxInSet, Live maximum space minus the live used in GiB
+# EsxHostCpuPercent, CPU percentage used by host
+# ReadyPercent, Percentage when the virtual machine was ready, but did run
+# SwapWaitPercent, CPU percentage spent waiting for swap-in
+# AlignedIOPercent, CPU percentage spent aligning the I/O
+# ReplicationTimeRemaining, Time to complete replication in seconds
+# ReplicationBytesRemaining, Bytes remaining to complete replication
+# ReplicationIncomingLogicalMBps, Destination's incoming logical replication throughput in MiB per second
+# ReplicationIncomingPhysicalMBps, Destination's incoming physical replication throughput in MiB per second
+# ReplicationOutgoingLogicalMBps, Destination's outgoing logical replication throughput in MiB per second
+# ReplicationOutgoingPhysicalMBps, Destination's outgoing physical replication throughput in MiB per second
+# LatestReplicatedSnapshotDate, Latest replicationed snapshot date
+# LatestSnapshotDate, Latest snapshot date
+# Protection, Indicates if VM is protected
+# VCenterName, Hypervisor management host name
+# EsxHost, Hypervisor host name
+# ClonedFrom, Cloned from VM name
+# PowerOn, Indicates if VM is powered on
+# IsTemplate, Indicates if VM is a template
+# IsSynthetic, Indicates if VM is synthetic
+# hasVMwareSnapshots, Indicates if VM has hypervisor snapshots
+# BlockSizeKiB, Block size in KiB
