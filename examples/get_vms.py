@@ -3,7 +3,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2015 Tintri, Inc.
+# Copyright (c) 2017 Tintri, Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -24,6 +24,7 @@
 # THE SOFTWARE.
 
 import sys
+from tintri.common import TintriServerError
 from tintri.v310 import Tintri
 from tintri.v310 import VirtualMachineFilterSpec
 
@@ -104,42 +105,46 @@ product = version_info.productName
 print("Product: " + product + " (" + version_info.preferredVersion + ")")
 print ""
 
-# Login to VMstore
-tintri.login(user_name, password)
-
-vm_filter_spec = VirtualMachineFilterSpec()
-vm_filter_spec.limit = page_size
-
-# Get VMs with page size filter.
-vms = tintri.get_vms(filters = vm_filter_spec)
-if vms.filteredTotal == 0:
-    print_error("No VMs present")
-    tintri.logout()
-    sys.exit()
-
-print_vms(vms, "Total")
-print ""
-
-vm_filter_spec.live = "true"
-
-# Repeat with the live filter.
-vms = tintri.get_vms(filters = vm_filter_spec)
-if vms.filteredTotal == 0:
-    print_error("No Live VMs present")
-else:
-    print_vms(vms, "Live Total")
-print ""
-
-if (vm_name_in):
-    vm_filter_spec.name = vm_name_in
-
-    # Repeat with name filter.
+try:
+    # Login to VMstore
+    tintri.login(user_name, password)
+    
+    vm_filter_spec = VirtualMachineFilterSpec()
+    vm_filter_spec.limit = page_size
+    
+    # Get VMs with page size filter.
     vms = tintri.get_vms(filters = vm_filter_spec)
     if vms.filteredTotal == 0:
-        print_error("No VMs present with name:" + vm_name_in)
-    else: print_vms(vms, vm_name_in + " pattern match total")
+        raise TintriServerError(0, cause="No VMs present")
+    
+    print_vms(vms, "Total")
     print ""
+    
+    vm_filter_spec.live = "true"
+    
+    # Repeat with the live filter.
+    vms = tintri.get_vms(filters = vm_filter_spec)
+    if vms.filteredTotal == 0:
+        print_error("No Live VMs present")
+    else:
+        print_vms(vms, "Live Total")
+    print ""
+    
+    if (vm_name_in):
+        vm_filter_spec.name = vm_name_in
+    
+        # Repeat with name filter.
+        vms = tintri.get_vms(filters = vm_filter_spec)
+        if vms.filteredTotal == 0:
+            print_error("No VMs present with name:" + vm_name_in)
+        else:
+            print_vms(vms, vm_name_in + " pattern match total")
+        print ""
+    
+except TintriServerError as tse:
+    print_error(tse.__str__())
+    tintri.logout()
+    sys.exit(2)
 
 # All pau, log out
 tintri.logout()
-
