@@ -31,7 +31,7 @@ from tintri.v310 import Tintri
 from tintri.v310 import VirtualMachineFilterSpec
 from tintri.v310 import VirtualMachineCloneSpec
 from tintri.v310 import VMwareCloneInfo
-from utils import dump_object
+from tintri.utils import dump_object
 
 """
  This Python script clones a VM.

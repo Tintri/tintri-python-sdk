@@ -30,7 +30,7 @@ from prettytable import PrettyTable
 from tintri.common import TintriServerError
 from tintri.v310 import Tintri
 from tintri.v310 import VirtualMachineFilterSpec
-from utils import dump_object
+from tintri.utils import dump_object
 
 """
  This Python script displays VM stats.
