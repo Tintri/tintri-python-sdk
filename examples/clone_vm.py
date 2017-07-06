@@ -31,7 +31,7 @@ from tintri.v310 import Tintri
 from tintri.v310 import VirtualMachineFilterSpec
 from tintri.v310 import VirtualMachineCloneSpec
 from tintri.v310 import VMwareCloneInfo
-from tintri.utils import dump_object
+from utils import dump_object
 
 """
  This Python script clones a VM.
@@ -156,13 +156,16 @@ try:
 
     host_resources = tintri.get_virtual_machine_host_resources(datastore_name)
 
+    found = False
+    
+    # Look for a compute resource.
     for hr in host_resources:
-        if (vcenter_name == hr.hostname and hr.type == "COMPUTE_RESOURCE"):
+        if (vcenter_name == hr.hostname and "COMPUTE_RESOURCE" in hr.type):
             found = True
             break
 
     if (not found):
-        raise TintriRequestExeption(0, cause="Host resource " + vcenter_name + " not found")
+        raise TintriServerExeption(0, cause="A compute host resource for " + vcenter_name + " not found")
 
     print_info("Found " + vcenter_name + " in host resources")
     
