@@ -14,4 +14,4 @@ The PySDK documentation is located [here](https://tintri.github.io/tintri-python
 1. [sudo] pip install Tintri_PySDK-1.0-py2-none-any.whl
 
 ## Questions or Comments ##
-For questions and comments, please go to the [Tintricity Automation Discussion Group](http://hub.tintricity.com/discussions/automation).
+For questions and comments, please go to the [Tintri Hub Automation Discussion Group](http://hub.tintri.com/discussions/automation).
