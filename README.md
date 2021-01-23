@@ -18,7 +18,7 @@ The PySDK documentation is located [here](https://tintri.github.io/tintri-python
 ![Alt text](python3-wheel-click.png)
 1. Click Download. (see image below)
 ![Alt text](python3-download.png)
-1. [sudo] pip install Tintri_PySDK-1.0-py3-none-any.whl
+1. [sudo] pip3 install Tintri_PySDK-1.0-py3-none-any.whl
 
 
 ## Questions or Comments ##
